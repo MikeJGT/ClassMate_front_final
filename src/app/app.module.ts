@@ -11,6 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/usuario/login/login.component';
 import { RegistroComponent } from './components/usuario/registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CardAlumnoComponent } from './components/profesor/card-alumno/card-alumno.component';
+import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria.component';
+import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/listar-usuarios.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    CardAlumnoComponent,
+    MensajeriaComponent,
+    ListarUsuariosComponent
   ],
   imports: [
     BrowserModule,
