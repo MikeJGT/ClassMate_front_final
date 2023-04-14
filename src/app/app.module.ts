@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CardAlumnoComponent } from './components/profesor/card-alumno/card-alumno.component';
 import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria.component';
 import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/listar-usuarios.component';
+import { ProfesorComponent } from './components/profesor/profesor/profesor.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/l
     RegistroComponent,
     CardAlumnoComponent,
     MensajeriaComponent,
-    ListarUsuariosComponent
+    ListarUsuariosComponent,
+    ProfesorComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -12,7 +14,8 @@ export class LoginComponent {
   formulario: FormGroup
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {
     this.formulario = new FormGroup({
       email: new FormControl(null, [
@@ -28,10 +31,15 @@ export class LoginComponent {
     try {
       console.log(this.formulario.value)
       const response = await this.userService.getUserByLogin(this.formulario.value);
-      console.log(response);
+
+      if (response.fatal) {
+        return alert(response.fatal);
+      }
+      localStorage.setItem('token', response.token);
+      console.log('Sale el token ?', response);
     } catch (error) {
       console.log(error)
     }
-
+    this.router.navigate(['/profesor']);
   }
 }
