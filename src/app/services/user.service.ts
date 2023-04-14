@@ -12,9 +12,10 @@ export class UserService {
   constructor(private httpClient: HttpClient) { }
 
 
-  getUserByLogin() {
+  getUserByLogin(LoginValues: any) {
     return firstValueFrom(
-      this.httpClient.get<any>(`${this.baseUrl}/api/usuarios/login`)
+      this.httpClient.post<any>(`${this.baseUrl}/api/usuarios/login`, LoginValues)
     )
   }
+
 }
