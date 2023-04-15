@@ -16,6 +16,7 @@ import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria
 import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/listar-usuarios.component';
 import { ProfesorComponent } from './components/profesor/profesor/profesor.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ConversacionComponent } from './components/profesor/conversacion/conversacion.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     CardAlumnoComponent,
     MensajeriaComponent,
     ListarUsuariosComponent,
-    ProfesorComponent
+    ProfesorComponent,
+    ConversacionComponent
   ],
   imports: [
     BrowserModule,
