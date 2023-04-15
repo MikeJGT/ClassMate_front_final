@@ -10,11 +10,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 
 export class ListarUsuariosComponent {
-  //arrUsers: User[];
+  arrUsers: User[];
 
   constructor(private profeSV: ProfesorService) {
-
+    this.arrUsers = []
   }
-
+  async ngOnInit() {
+    this.arrUsers = await this.profeSV.getUsers();
+    console.log(this.arrUsers);
+  }
 
 }

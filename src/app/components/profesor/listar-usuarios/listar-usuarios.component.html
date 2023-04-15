@@ -1,1 +1,11 @@
 <p>listar-usuarios works!</p>
+<!--profesor/alumnos/:alumnoid-->
+
+<div class="alumnos">
+    <div class="alumno" *ngFor="let alumno of arrUsers" [routerLink]="['/profesor/alumnos', alumno.id]">
+        <p> {{alumno.id}}</p>
+        <h3>{{alumno.nombre}}{{alumno.apellidos}}</h3>
+        <p>Email: {{alumno.email}}</p>
+        <p>DNI: {{alumno.dni}}</p>
+    </div>
+</div>

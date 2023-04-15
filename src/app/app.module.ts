@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +15,7 @@ import { CardAlumnoComponent } from './components/profesor/card-alumno/card-alum
 import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria.component';
 import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/listar-usuarios.component';
 import { ProfesorComponent } from './components/profesor/profesor/profesor.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { ProfesorComponent } from './components/profesor/profesor/profesor.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
