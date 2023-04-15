@@ -10,8 +10,12 @@ import { MensajeriaService } from 'src/app/services/mensajeria.service';
 export class MensajeriaComponent {
 
   arrMensajes: any[]
+  emisor: String
+  receptor: String
   constructor(private activateRoute: ActivatedRoute, private mensajeriaSV: MensajeriaService) {
     this.arrMensajes = [];
+    this.emisor = '';
+    this.receptor = '';
   }
 
   async ngOnInit() {
@@ -24,9 +28,7 @@ export class MensajeriaComponent {
       })
       this.arrMensajes = await this.mensajeriaSV.getMensajesByConversacionId(id);
       console.log('Mensajes', this.arrMensajes);
-      // for (let mensaje of this.arrMensajes) {
-      //   mensaje.emisor = 100;
-      // }
+
     } catch (err) {
       console.log('ERROR->ERRRRRRRRRRRRRRRRRRRRRR');
     }
