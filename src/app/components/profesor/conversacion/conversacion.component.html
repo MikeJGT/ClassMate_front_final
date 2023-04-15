@@ -1,1 +1,3 @@
-<p>conversacion works!</p>
+<div *ngFor="let conversacion of arrConversaciones" [routerLink]="['/profesor/mensajeria',conversacion.id]">
+    <p>Asunto: {{conversacion.asunto}}</p>
+</div>

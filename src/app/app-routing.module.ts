@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'profesor/alumnos', component: ListarUsuariosComponent },
   { path: 'profesor/alumnos/:alumnoid', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
-  { path: 'profesor/mensajeria', component: MensajeriaComponent },
+  { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: '**', redirectTo: '' }
 ];
 

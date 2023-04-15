@@ -11,9 +11,15 @@ export class MensajeriaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getConversaciones(conversacionId: any) {
+  getConversaciones() {
     return firstValueFrom(
-      this.httpClient.get<any[]>(`${this.baseUrl}/${conversacionId}`)
+      this.httpClient.get<any[]>(`${this.baseUrl}/`)
+    )
+  }
+
+  getMensajesByConversacionId(id: any) {
+    return firstValueFrom(
+      this.httpClient.get<any[]>(`${this.baseUrl}/mensaje/${id}`)
     )
   }
 }

@@ -1,1 +1,6 @@
-<p>mensajeria works!</p>
+<div *ngFor="let mensaje of arrMensajes">
+    <p>Emisor100:{{mensaje.emisor_id}}</p>
+    <p>Receptor:{{mensaje.receptor_id}}</p>
+    <p>Contenido: {{mensaje.contenido}}</p>
+    <p>Contenido: {{mensaje.fecha}}</p>
+</div>
