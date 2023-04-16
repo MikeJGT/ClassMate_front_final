@@ -8,14 +8,11 @@ import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/l
 import { CardAlumnoComponent } from './components/profesor/card-alumno/card-alumno.component';
 import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria.component';
 import { ConversacionComponent } from './components/profesor/conversacion/conversacion.component';
-<<<<<<< HEAD
 import { TablaComponent } from './components/horario/tabla/tabla.component';
-=======
 import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea-list.component';
 import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
->>>>>>> trabajo_lida
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -26,15 +23,12 @@ const routes: Routes = [
   { path: 'profesor/alumnos/:alumnoid', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
-<<<<<<< HEAD
   { path: 'horario', component: TablaComponent },
-=======
   //Rutas de tarea
   { path: 'profesor/tarea', component: TareaListComponent },
   { path: 'profesor/tarea/new', component: NewTareaComponent },
   { path: 'tarea/clase', component: TareaComponent },
   { path: 'profesor/tarea/edit/:tareaid', component: EditTareaComponent },
->>>>>>> trabajo_lida
   { path: '**', redirectTo: '' }
 ];
 
