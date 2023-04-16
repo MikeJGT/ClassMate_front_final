@@ -17,5 +17,9 @@ export class UserService {
       this.httpClient.post<any>(`${this.baseUrl}/api/usuarios/login`, LoginValues)
     )
   }
-
+  getHorarioByClaseId(claseId: any) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/horario/${claseId}`)
+    )
+  }
 }

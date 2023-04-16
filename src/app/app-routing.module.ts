@@ -8,6 +8,7 @@ import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/l
 import { CardAlumnoComponent } from './components/profesor/card-alumno/card-alumno.component';
 import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria.component';
 import { ConversacionComponent } from './components/profesor/conversacion/conversacion.component';
+import { TablaComponent } from './components/horario/tabla/tabla.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'profesor/alumnos/:alumnoid', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
+  { path: 'horario', component: TablaComponent },
   { path: '**', redirectTo: '' }
 ];
 
@@ -25,5 +27,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {
 }

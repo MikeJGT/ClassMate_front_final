@@ -15,4 +15,10 @@ export class ProfesorService {
       this.httpClient.get<any>(`${this.baseUrl}/api/profesor/alumno`)
     );
   }
+
+  getHorarioByProfesorId(profesorId: any) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/horario/profesor/${profesorId}`)
+    )
+  }
 }

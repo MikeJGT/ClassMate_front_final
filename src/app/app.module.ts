@@ -17,6 +17,8 @@ import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/l
 import { ProfesorComponent } from './components/profesor/profesor/profesor.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ConversacionComponent } from './components/profesor/conversacion/conversacion.component';
+import { FormularioComponent } from './components/horario/formulario/formulario.component';
+import { TablaComponent } from './components/horario/tabla/tabla.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ConversacionComponent } from './components/profesor/conversacion/conver
     MensajeriaComponent,
     ListarUsuariosComponent,
     ProfesorComponent,
-    ConversacionComponent
+    ConversacionComponent,
+    FormularioComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
