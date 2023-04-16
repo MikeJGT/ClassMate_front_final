@@ -17,6 +17,10 @@ import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/l
 import { ProfesorComponent } from './components/profesor/profesor/profesor.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ConversacionComponent } from './components/profesor/conversacion/conversacion.component';
+import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea-list.component';
+import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
+import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
+import { TareaComponent } from './components/tarea/tarea.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { ConversacionComponent } from './components/profesor/conversacion/conver
     MensajeriaComponent,
     ListarUsuariosComponent,
     ProfesorComponent,
-    ConversacionComponent
+    ConversacionComponent,
+    TareaListComponent,
+    NewTareaComponent,
+    EditTareaComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
