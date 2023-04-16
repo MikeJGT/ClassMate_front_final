@@ -19,6 +19,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { ConversacionComponent } from './components/profesor/conversacion/conversacion.component';
 import { FormularioComponent } from './components/horario/formulario/formulario.component';
 import { TablaComponent } from './components/horario/tabla/tabla.component';
+import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea-list.component';
+import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
+import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
+import { TareaComponent } from './components/tarea/tarea.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { TablaComponent } from './components/horario/tabla/tabla.component';
     ProfesorComponent,
     ConversacionComponent,
     FormularioComponent,
-    TablaComponent
+    TablaComponent,
+    TareaListComponent,
+    NewTareaComponent,
+    EditTareaComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,

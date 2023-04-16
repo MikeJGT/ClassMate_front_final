@@ -1,0 +1,41 @@
+<p>new-tarea works!</p>
+
+<form [formGroup]="formularioTarea" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">ID Asignatura</label>
+        <input type="number" class="form-control" formControlName="asignaturas_id">
+
+        <p class="error" *ngIf="checkError('asignaturas_id', 'required')">
+            El campo id asignatura es requerido</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">ID Clases</label>
+        <input type="number" class="form-control" formControlName="clases_id">
+
+        <p class="error" *ngIf="checkError('clases_id', 'required')">
+            El campo id clase es requerido</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <input type="text" class="form-control" formControlName="titulo">
+
+        <p class="error" *ngIf="checkError('titulo', 'required')">
+            El campo titulo es requerido</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Contenido</label>
+        <textarea class="form-control" cols="30" rows="10" formControlName="contenido"></textarea>
+
+        <p class="error" *ngIf="checkError('contenido', 'required')">
+            El campo contenido es requerido</p>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Fecha Entrega</label>
+        <input type="datetime-local" class="form-control" formControlName="fecha_entrega">
+
+        <p class="error" *ngIf="checkError('fecha_entrega', 'required')">
+            El campo fecha entrega es requerido</p>
+    </div>
+    <input type="submit" value="Create">
+
+</form>

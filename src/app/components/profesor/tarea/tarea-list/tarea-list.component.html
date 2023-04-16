@@ -1,0 +1,11 @@
+<div class="tareas">
+    <h2>Tarea </h2>
+    <div class="tarea" *ngFor="let tarea of tareas">
+        <h3>Titulo:{{tarea.titulo}}</h3>
+        <p>{{tarea.contenido}}</p>
+        <p>Asignatura:{{tarea.asignatura}}</p>
+        <p>Clases: {{tarea.clase}}</p>
+        <p>Profesor: {{tarea.Profesor}}</p>
+        <button [routerLink]="['/profesor/tarea','edit', tarea.id]">🖊️Editar</button>
+    </div>
+</div>
