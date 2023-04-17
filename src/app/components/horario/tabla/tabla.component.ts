@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProfesorService } from 'src/app/services/profesor.service';
 import { UserService } from 'src/app/services/user.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-tabla',
@@ -11,10 +12,13 @@ export class TablaComponent {
   arr: any[]
   arrHoraProf: any[]
   token: any
-  constructor(private profSv: ProfesorService, private userSV: UserService) {
+  constructor(
+    private profSv: ProfesorService,
+    private userSV: UserService,
+    private utilSV: UtilsService) {
 
     //Obtencion del token?
-    this.token = localStorage.getItem('token'),
+    this.token = utilSV.getToken(),
 
       //Simulo tener los datos del token ya decodificados
       this.arr = [{
@@ -51,22 +55,22 @@ export class TablaComponent {
       ]
   }
   async ngOnInit() {
-
+    console.log('El token decodificado', this.token);
     //Dependiendo del rol muestro unos datos u otros
-    switch (this.arr[0].rol) {
+    switch (this.token.role) {
       case 'profesor': {
-        await this.profSv.getHorarioByProfesorId(this.arr[0].usuario_id)
-        console.log('Horario para profesor', this.arr[0].usuario_id);
+        await this.profSv.getHorarioByProfesorId(this.token.user_id)
+        console.log('Horario para profesor', this.token.user_id);
         break;
       }
       case 'alumno': {
-        await this.userSV.getHorarioByClaseId(this.arr[0].usuario_id);
-        console.log('Horario para alumnos');
+        await this.userSV.getHorarioByClaseId(this.token.user_id);
+        console.log('Horario para alumnos', this.token.user_id);
         break;
       }
       case 'tutor': {
-        await this.userSV.getHorarioByClaseId(this.arr[0].usuario_id);
-        console.log('Horario para padres');
+        await this.userSV.getHorarioByClaseId(this.token.user_id);
+        console.log('Horario para padres', this.token.user_id);
         break;
       }
       default: {
