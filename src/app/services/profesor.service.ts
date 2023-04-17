@@ -34,10 +34,37 @@ export class ProfesorService {
     )
   }
 
+  //Sacar tarea profesor con ID
+  getTareaProfesorById(idTarea: any) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/tarea/${idTarea}`)
+    )
+  }
+
   //Insertar tarea
   createTarea(tareaValue: any) {
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrl}/api/tarea`, tareaValue)
+    )
+  }
+  //Modificar tarea
+  updateTask(idTarea: any, values: any) {
+    return firstValueFrom(
+      this.httpClient.put<any>(`${this.baseUrl}/api/tarea/${idTarea}`, values)
+    )
+  }
+
+  //Recupera clase por idAlumno
+  getClassByAlumnoID(idAlumno: number) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/clase/alumnos/${idAlumno}`)
+    )
+  }
+
+  //Borrar tarea
+  deleteTask(idTarea: number) {
+    return firstValueFrom(
+      this.httpClient.delete<any>(`${this.baseUrl}/api/tarea/${idTarea}`)
     )
   }
 }

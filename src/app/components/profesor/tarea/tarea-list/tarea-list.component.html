@@ -1,11 +1,14 @@
 <div class="tareas">
     <h2>Tarea </h2>
     <div class="tarea" *ngFor="let tarea of tareas">
+        <p>ID: {{tarea.id}}</p>
         <h3>Titulo:{{tarea.titulo}}</h3>
         <p>{{tarea.contenido}}</p>
         <p>Asignatura:{{tarea.asignatura}}</p>
         <p>Clases: {{tarea.clase}}</p>
         <p>Profesor: {{tarea.Profesor}}</p>
+        <p>Fecha Entrega: {{tarea.fecha_entrega}}</p>
         <button [routerLink]="['/profesor/tarea','edit', tarea.id]">🖊️Editar</button>
+        <button (click)="deleteTask(tarea.id)" style="margin-left: 10px;">🪠Delete</button>
     </div>
 </div>
