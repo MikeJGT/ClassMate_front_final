@@ -12,6 +12,7 @@ export class TablaComponent {
   arr: any[]
   arrHoraProf: any[]
   token: any
+  displayedColumns: String[]
   constructor(
     private profSv: ProfesorService,
     private userSV: UserService,
@@ -25,7 +26,7 @@ export class TablaComponent {
         "usuario_id": 1,
         "rol": 'profesor'
       }],
-
+      this.displayedColumns = ['hora', 'lunes', 'martes'],
       //Respuesta desde el Back, horarios para profesor
       this.arrHoraProf = [
         {

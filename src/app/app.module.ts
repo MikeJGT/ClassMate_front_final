@@ -23,6 +23,7 @@ import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea
 import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
 import { TareaComponent } from './components/tarea/tarea.component';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -43,12 +44,15 @@ import { TareaComponent } from './components/tarea/tarea.component';
     NewTareaComponent,
     EditTareaComponent,
     TareaComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
