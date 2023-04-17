@@ -54,6 +54,13 @@ export class ProfesorService {
     )
   }
 
+  //Recupera clase por idAlumno
+  getClassByAlumnoID(idAlumno: number) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/clase/alumnos/${idAlumno}`)
+    )
+  }
+
   //Borrar tarea
   deleteTask(idTarea: number) {
     return firstValueFrom(
