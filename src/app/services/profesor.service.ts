@@ -34,10 +34,23 @@ export class ProfesorService {
     )
   }
 
+  //Sacar tarea profesor con ID
+  getTareaProfesorById(idTarea: any) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/tarea/${idTarea}`)
+    )
+  }
+
   //Insertar tarea
   createTarea(tareaValue: any) {
     return firstValueFrom(
       this.httpClient.post<any>(`${this.baseUrl}/api/tarea`, tareaValue)
+    )
+  }
+
+  updateTask(idTarea: any, values: any) {
+    return firstValueFrom(
+      this.httpClient.put<any>(`${this.baseUrl}/api/tarea/${idTarea}`, values)
     )
   }
 }
