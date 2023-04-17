@@ -50,7 +50,9 @@ export class EditTareaComponent {
     this.activatedRoute.params.subscribe(async data => {
       let id = data['tareaid'];
       const response = await this.profesorService.updateTask(id, this.formulario.value);
-      console.log(response)
+      console.log(response);
     })
   }
+
+
 }

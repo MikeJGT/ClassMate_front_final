@@ -47,10 +47,17 @@ export class ProfesorService {
       this.httpClient.post<any>(`${this.baseUrl}/api/tarea`, tareaValue)
     )
   }
-
+  //Modificar tarea
   updateTask(idTarea: any, values: any) {
     return firstValueFrom(
       this.httpClient.put<any>(`${this.baseUrl}/api/tarea/${idTarea}`, values)
+    )
+  }
+
+  //Borrar tarea
+  deleteTask(idTarea: number) {
+    return firstValueFrom(
+      this.httpClient.delete<any>(`${this.baseUrl}/api/tarea/${idTarea}`)
     )
   }
 }

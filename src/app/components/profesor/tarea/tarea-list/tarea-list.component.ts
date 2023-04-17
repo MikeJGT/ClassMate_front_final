@@ -16,6 +16,10 @@ export class TareaListComponent {
   }
   async ngOnInit() {
     this.tareas = await this.profesorService.getTareabyProfesorID(3);
-    console.log(this.tareas)
+    console.log(this.tareas);
+  }
+  async deleteTask(idTask: number) {
+    const res = await this.profesorService.deleteTask(idTask);
+    console.log(res);
   }
 }

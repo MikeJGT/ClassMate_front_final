@@ -9,5 +9,6 @@
         <p>Profesor: {{tarea.Profesor}}</p>
         <p>Fecha Entrega: {{tarea.fecha_entrega}}</p>
         <button [routerLink]="['/profesor/tarea','edit', tarea.id]">🖊️Editar</button>
+        <button (click)="deleteTask(tarea.id)" style="margin-left: 10px;">🪠Delete</button>
     </div>
 </div>
