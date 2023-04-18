@@ -22,7 +22,7 @@ import { TablaComponent } from './components/horario/tabla/tabla.component';
 import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea-list.component';
 import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
-import { TareaComponent } from './components/tarea/tarea.component';
+import { TareaComponent } from './components/tutor/tarea/tarea.component';
 import { MatTableModule } from '@angular/material/table';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
