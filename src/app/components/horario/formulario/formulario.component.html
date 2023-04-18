@@ -1,1 +1,59 @@
-<p>formulario works!</p>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Hora</mat-label>
+        <mat-select formControlName="inicio">
+            <mat-option value="09:00:00">9:00h</mat-option>
+            <mat-option value="10:00:00">10:00h</mat-option>
+            <mat-option value="11:30:00">11:30h</mat-option>
+            <mat-option value="12:30:00">12:30h</mat-option>
+            <mat-option value="15:30:00">15:30h</mat-option>
+            <mat-option value="16:30:00">16:30h</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Dia</mat-label>
+        <mat-select formControlName="dia">
+            <mat-option [value]="martes">Lunes</mat-option>
+            <mat-option value="m">Martes</mat-option>
+            <mat-option value="x">Miércoles</mat-option>
+            <mat-option value="j">Jueves</mat-option>
+            <mat-option value="v">Viernes</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Asignatura</mat-label>
+        <mat-select formControlName="asignaturas_id">
+            <mat-option value="l">Lunes</mat-option>
+            <mat-option value="m">Martes</mat-option>
+            <mat-option value="x">Miércoles</mat-option>
+            <mat-option value="j">Jueves</mat-option>
+            <mat-option value="v">Viernes</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Clase</mat-label>
+        <mat-select formControlName="clases_id">
+            <mat-option value="1A">1ºA</mat-option>
+            <mat-option value="1B">1ºB</mat-option>
+            <mat-option value="1C">1ºC</mat-option>
+            <mat-option value="2A">2ºA</mat-option>
+            <mat-option value="2B">2ºB</mat-option>
+            <mat-option value="2C">2ºC</mat-option>
+            <mat-option value="3A">3ºA</mat-option>
+            <mat-option value="3B">3ºB</mat-option>
+            <mat-option value="3C">3ºC</mat-option>
+            <mat-option value="4A">4ºA</mat-option>
+            <mat-option value="4B">4ºB</mat-option>
+            <mat-option value="4C">4ºC</mat-option>
+            <mat-option value="5A">5ºA</mat-option>
+            <mat-option value="5B">5ºB</mat-option>
+            <mat-option value="5C">5ºC</mat-option>
+            <mat-option value="6A">6ºA</mat-option>
+            <mat-option value="6B">6ºB</mat-option>
+            <mat-option value="6C">6ºC</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <input type="submit" value="Registrar">
+
+</form>

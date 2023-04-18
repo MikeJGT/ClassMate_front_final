@@ -24,6 +24,10 @@ import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tar
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
 import { TareaComponent } from './components/tutor/tarea/tarea.component';
 import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
 
@@ -56,7 +60,11 @@ import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    BrowserAnimationsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]
