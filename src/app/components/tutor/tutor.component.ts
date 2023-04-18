@@ -24,7 +24,11 @@ export class TutorComponent {
   async getData(): Promise<void> {
     try {
       console.log(this.searchForm.value)
-      let response = await this.tutorService.getTutor()
+      let name = this.searchForm.value.nombre
+      let response = await this.tutorService.getTutorByName(name)
+      if (response.length === 0) {
+        alert('No existe ese usuario')
+      }
       console.log(response)
 
     } catch (error) {
