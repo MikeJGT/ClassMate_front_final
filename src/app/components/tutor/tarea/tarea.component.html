@@ -1,0 +1,15 @@
+<div>
+    <h2>Tarea</h2>
+    <div class="tareas" style="max-width: 25rem;">
+        <article class="container card text-dark bg-light mb-3areas" style="max-width: 25rem;"
+            *ngFor="let tarea of arrTareas" id="tarea">
+            <div class="card-header">{{tarea.clase}}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{tarea.titulo}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Entrega:{{tarea.fecha_entrega}}</h6>
+                <p class="card-text">Contenido:{{tarea.contenido}}</p>
+            </div>
+
+        </article>
+    </div>
+</div>

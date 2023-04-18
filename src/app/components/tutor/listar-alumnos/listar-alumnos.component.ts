@@ -16,7 +16,7 @@ export class ListarAlumnosComponent {
   }
 
   async ngOnInit() {
-    this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(2)
+    this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(5)
     console.log(this.arrAlumnos);
 
   }

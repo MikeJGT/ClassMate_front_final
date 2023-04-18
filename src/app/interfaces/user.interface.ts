@@ -9,4 +9,6 @@ export interface User {
     genero: string;
     direccion: string;
     nacimiento: Date;
+    clase: string;
+    clases_id: string;
 }

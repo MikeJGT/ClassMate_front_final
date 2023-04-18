@@ -7,5 +7,7 @@
         <p>Email: {{alumno.email}}</p>
         <p>Direccion: {{alumno.direccion}}</p>
         <p>Nacimiento: {{alumno.nacimiento}}</p>
+        <p>ClaseID: {{alumno.clases_id}}</p>
+        <p [routerLink]="['/tutor/tarea', alumno.clases_id]">Clase: {{alumno.clase}}</p>
     </div>
 </div>

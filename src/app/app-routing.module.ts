@@ -11,7 +11,7 @@ import { ConversacionComponent } from './components/profesor/conversacion/conver
 import { TablaComponent } from './components/horario/tabla/tabla.component';
 import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea-list.component';
 import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
-import { TareaComponent } from './components/tarea/tarea.component';
+import { TareaComponent } from './components/tutor/tarea/tarea.component';
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
@@ -29,11 +29,11 @@ const routes: Routes = [
   //Rutas de tarea
   { path: 'profesor/tarea', component: TareaListComponent },
   { path: 'profesor/tarea/new', component: NewTareaComponent },
-  { path: 'tarea/clase', component: TareaComponent },
   { path: 'profesor/tarea/edit/:tareaid', component: EditTareaComponent },
   // Rutas del tutor
   { path: 'tutor', component: TutorComponent },
   { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },
+  { path: 'tutor/tarea/:classId', component: TareaComponent },
   { path: '**', redirectTo: '' }
 ];
 
