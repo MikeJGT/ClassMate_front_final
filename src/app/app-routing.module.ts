@@ -13,6 +13,8 @@ import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea
 import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
+import { TutorComponent } from './components/tutor/tutor.component';
+import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -29,6 +31,9 @@ const routes: Routes = [
   { path: 'profesor/tarea/new', component: NewTareaComponent },
   { path: 'tarea/clase', component: TareaComponent },
   { path: 'profesor/tarea/edit/:tareaid', component: EditTareaComponent },
+  // Rutas del tutor
+  { path: 'tutor', component: TutorComponent },
+  { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },
   { path: '**', redirectTo: '' }
 ];
 

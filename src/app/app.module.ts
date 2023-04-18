@@ -24,6 +24,8 @@ import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tar
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { MatTableModule } from '@angular/material/table';
+import { TutorComponent } from './components/tutor/tutor.component';
+import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { MatTableModule } from '@angular/material/table';
     TareaListComponent,
     NewTareaComponent,
     EditTareaComponent,
-    TareaComponent
+    TareaComponent,
+    TutorComponent,
+    ListarAlumnosComponent
 
 
   ],

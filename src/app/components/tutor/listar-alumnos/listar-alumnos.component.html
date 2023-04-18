@@ -1,0 +1,11 @@
+<p>listar-alumnos works!</p>
+
+
+<div class="alumnos">
+    <div class="alumno" *ngFor="let alumno of arrAlumnos">
+        <h3>{{alumno.nombre}}{{alumno.apellidos}}</h3>
+        <p>Email: {{alumno.email}}</p>
+        <p>Direccion: {{alumno.direccion}}</p>
+        <p>Nacimiento: {{alumno.nacimiento}}</p>
+    </div>
+</div>
