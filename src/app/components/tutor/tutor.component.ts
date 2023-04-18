@@ -11,9 +11,11 @@ import { TutorService } from 'src/app/services/tutor.service';
 export class TutorComponent {
 
   searchForm: FormGroup;
+  arrTutor: User[]
 
 
   constructor(private tutorService: TutorService) {
+    this.arrTutor = []
     this.searchForm = new FormGroup({
       nombre: new FormControl('', [
         Validators.required,
@@ -21,11 +23,12 @@ export class TutorComponent {
     }, [])
   }
 
-  async getData(): Promise<void> {
+  async getTutor(): Promise<void> {
     try {
       console.log(this.searchForm.value)
       let name = this.searchForm.value.nombre
       let response = await this.tutorService.getTutorByName(name)
+      this.arrTutor = response
       if (response.length === 0) {
         alert('No existe ese usuario')
       }
