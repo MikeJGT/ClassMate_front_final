@@ -1,0 +1,8 @@
+<p>tutor works!</p>
+
+<form [formGroup]="searchForm" (ngSubmit)="getData()">
+    <div class="d-flex">
+        <input class="form-control me-3" type="text" placeholder="introduce un nombre" formControlName="nombre">
+        <button type="submit" class="btn btn-info">BUSCAR</button>
+    </div>
+</form>
