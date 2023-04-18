@@ -13,7 +13,7 @@ export class TutorService {
 
   getAlumnoByTutorId(tutorId: any) {
     return firstValueFrom(
-      this.httpClient.get<any>(`${this.baseUrl}/api/usuarios/tutor/${tutorId}`)
+      this.httpClient.get<any>(`${this.baseUrl}/api/usuarios/tutor/id/${tutorId}`)
     )
   }
 
