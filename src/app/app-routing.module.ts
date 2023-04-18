@@ -13,6 +13,7 @@ import { TareaListComponent } from './components/profesor/tarea/tarea-list/tarea
 import { NewTareaComponent } from './components/profesor/tarea/new-tarea/new-tarea.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-tarea.component';
+import { FormularioComponent } from './components/horario/formulario/formulario.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'horario', component: TablaComponent },
+  { path: 'horario/registro', component: FormularioComponent },
   //Rutas de tarea
   { path: 'profesor/tarea', component: TareaListComponent },
   { path: 'profesor/tarea/new', component: NewTareaComponent },

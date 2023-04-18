@@ -388,6 +388,7 @@ export class TablaComponent {
   }
 
   transformDatos(array: any) {
+
     const horas = [{ h: '09:00:00', v: 0 }, { h: '10:00:00', v: 1 }, { h: '11:00:00', v: 2 }, { h: '12:00:00', v: 3 }, { h: '15:00:00', v: 4 }, { h: '16:00:00', v: 5 }];
     const horas2 = ['09:00:00', '10:00:00', '11:00:00', '12:00:00', '15:00:00', '16:00:00'];
     const dias = [{ d: 'l', v: 0 }, { d: 'm', v: 1 }, { d: 'x', v: 2 }, { d: 'j', v: 3 }, { d: 'v', v: 4 }];
@@ -395,7 +396,7 @@ export class TablaComponent {
     const total = Array.from({ length: 6 }, e => Array(5).fill(null))
 
     for (let item of array) {
-      console.log('ITEM', item.inicio, item.dia, item.asignatura);
+      //console.log('ITEM', item.inicio, item.dia, item.asignatura);
       const x = horas.find(i => i.h === item.inicio)!.v;
       const y = dias.find(i => i.d === item.dia)!.v;
       total[x][y] = item.asignatura;
