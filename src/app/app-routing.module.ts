@@ -16,6 +16,7 @@ import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-
 import { FormularioComponent } from './components/horario/formulario/formulario.component';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -36,7 +37,10 @@ const routes: Routes = [
   { path: 'tutor', component: TutorComponent },
   { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },
   { path: 'tutor/tarea/:classId', component: TareaComponent },
+  //Perfil
+  { path: 'perfil', component: PerfilComponent },
   { path: '**', redirectTo: '' }
+
 ];
 
 @NgModule({

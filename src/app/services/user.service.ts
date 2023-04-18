@@ -22,4 +22,9 @@ export class UserService {
       this.httpClient.get<any>(`${this.baseUrl}/api/horario/${claseId}`)
     )
   }
+  getUserById(userId: number) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/usuarios/${userId}`)
+    )
+  }
 }

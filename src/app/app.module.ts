@@ -30,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar
     EditTareaComponent,
     TareaComponent,
     TutorComponent,
-    ListarAlumnosComponent
+    ListarAlumnosComponent,
+    PerfilComponent
 
 
   ],
