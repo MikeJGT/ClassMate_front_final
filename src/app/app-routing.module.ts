@@ -16,6 +16,7 @@ import { EditTareaComponent } from './components/profesor/tarea/edit-tarea/edit-
 import { FormularioComponent } from './components/horario/formulario/formulario.component';
 import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
+import { ListarClasesComponent } from './components/clase/listar-clases/listar-clases.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -28,6 +29,8 @@ const routes: Routes = [
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'horario', component: TablaComponent },
   { path: 'horario/registro', component: FormularioComponent },
+  //La ruta clase es prescindible, está para comprobar el componente
+  { path: 'clase', component: ListarClasesComponent },
   //Rutas de tarea
   { path: 'profesor/tarea', component: TareaListComponent },
   { path: 'profesor/tarea/new', component: NewTareaComponent },

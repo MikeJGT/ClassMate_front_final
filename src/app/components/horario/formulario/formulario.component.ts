@@ -20,7 +20,7 @@ export class FormularioComponent {
   }
 
   //getClase {clase_nombre:'1A',clase_id:2}
-  //getAsignatura {asignatura:'1A',asignatura:2}
+  //getAsignatura {asignatura:'Mates',asignatura_id:2}
   onSubmit() {
     console.log(this.formulario.value);
   }
