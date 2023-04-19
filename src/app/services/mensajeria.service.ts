@@ -13,13 +13,13 @@ export class MensajeriaService {
 
   getConversaciones() {
     return firstValueFrom(
-      this.httpClient.get<any[]>(`${this.baseUrl}/`)
+      this.httpClient.get<any>(`${this.baseUrl}/`)
     )
   }
 
   getMensajesByConversacionId(id: any) {
     return firstValueFrom(
-      this.httpClient.get<any[]>(`${this.baseUrl}/mensaje/${id}`)
+      this.httpClient.get<any>(`${this.baseUrl}/mensaje/${id}`)
     )
   }
 }

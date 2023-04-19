@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ProfesorService } from 'src/app/services/profesor.service';
 
 @Component({
@@ -9,9 +10,12 @@ import { ProfesorService } from 'src/app/services/profesor.service';
 })
 export class NewTareaComponent {
   formularioTarea: FormGroup
+  id: any
+  nombreAsignatura: any
 
   constructor(
-    private profesorService: ProfesorService
+    private profesorService: ProfesorService,
+    private actRoute: ActivatedRoute
   ) {
     this.formularioTarea = new FormGroup(
       {
@@ -36,6 +40,15 @@ export class NewTareaComponent {
     console.log(this.formularioTarea.value)
     const response = await this.profesorService.createTarea(this.formularioTarea.value)
     console.log(response)
+    this.actRoute.params.subscribe(async params => {
+      console.log(params)
+      this.id = params['id'];
+      this.nombreAsignatura = params['nombre'];
+      console.log('ASIGNATURA EMITIDA', this.nombreAsignatura)
+      //lista de tareas para una asignatura
+      //reutilizamos tarea-list-component   
+
+    })
   }
 
   //Chequea el error

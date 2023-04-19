@@ -26,7 +26,10 @@ export class MensajeriaComponent {
         id = data['conversacionID'];
         console.log('id', id);
       })
-      this.arrMensajes = await this.mensajeriaSV.getMensajesByConversacionId(id);
+      const response = await this.mensajeriaSV.getMensajesByConversacionId(id);
+      if (!response.fatal) {
+        this.arrMensajes = response
+      }
       console.log('Mensajes', this.arrMensajes);
 
     } catch (err) {

@@ -36,6 +36,6 @@
         <p class="error" *ngIf="checkError('fecha_entrega', 'required')">
             El campo fecha entrega es requerido</p>
     </div>
-    <input type="submit" value="Create">
+    <input type="submit" value="Create" [routerLink]="['/asignaturas',id,nombreAsignatura]">
 
 </form>
