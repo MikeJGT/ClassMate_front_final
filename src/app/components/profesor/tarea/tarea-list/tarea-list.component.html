@@ -5,8 +5,6 @@
         <h3>Titulo:{{tarea.titulo}}</h3>
         <p>{{tarea.contenido}}</p>
         <p>Asignatura:{{tarea.asignatura}}</p>
-        <p>Clases: {{tarea.clase}}</p>
-        <p>Profesor: {{tarea.Profesor}}</p>
         <p>Fecha Entrega: {{tarea.fecha_entrega}}</p>
         <button [routerLink]="['/profesor/tarea','edit', tarea.id]">🖊️Editar</button>
         <button (click)="deleteTask(tarea.id)" style="margin-left: 10px;">🪠Delete</button>

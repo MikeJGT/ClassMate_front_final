@@ -33,6 +33,8 @@ import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListarClasesComponent } from './components/clase/listar-clases/listar-clases.component';
 import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
+import { ListarAsignaturasComponent } from './components/asignatura/listar-asignaturas/listar-asignaturas.component';
+import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { ClaseViewComponent } from './components/clase/clase-view/clase-view.com
     ListarAlumnosComponent,
     PerfilComponent,
     ListarClasesComponent,
-    ClaseViewComponent
+    ClaseViewComponent,
+    ListarAsignaturasComponent,
+    CardAsignaturaComponent
 
 
   ],

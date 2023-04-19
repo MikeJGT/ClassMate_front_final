@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/interfaces/user.interface';
+import { AlumnoService } from 'src/app/services/alumno.service';
 import { ProfesorService } from 'src/app/services/profesor.service';
 
 @Component({
@@ -9,19 +10,22 @@ import { ProfesorService } from 'src/app/services/profesor.service';
   styleUrls: ['./card-alumno.component.css']
 })
 export class CardAlumnoComponent {
-  alumno: User | null;
+
+  perfil: any
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private profesorService: ProfesorService
+    private alumnoSV: AlumnoService
   ) {
-    this.alumno = null;
+    this.perfil = [];
   }
   ngOnInit() {
-    this.activatedRoute.params.subscribe(data => {
-      console.log(data['alumnoid'])
+    this.activatedRoute.params.subscribe(async params => {
+      console.log(params)
+      const id = params['id'];
       //Recupera el alumnos a partir de su id;
-
+      [this.perfil] = await this.alumnoSV.getAlumnoById(id);
+      console.log(this.perfil)
     })
   }
 }

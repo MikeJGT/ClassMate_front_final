@@ -19,6 +19,7 @@ import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListarClasesComponent } from './components/clase/listar-clases/listar-clases.component';
 import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
+import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'profesor', component: ProfesorComponent },
   { path: 'profesor/alumnos', component: ListarUsuariosComponent },
-  { path: 'profesor/alumnos/:alumnoid', component: CardAlumnoComponent },
+  { path: 'profesor/alumnos/:id', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'profesor/clase/:id', component: ClaseViewComponent },
@@ -44,6 +45,11 @@ const routes: Routes = [
   { path: 'tutor/tarea/:id', component: TareaComponent },
   //Perfil
   { path: 'perfil', component: PerfilComponent },
+
+  //Asinaturas
+  { path: 'asignaturas/:id/:nombre', component: CardAsignaturaComponent },
+
+
   { path: '**', redirectTo: '' }
 
 ];
