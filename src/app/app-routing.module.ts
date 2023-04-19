@@ -18,6 +18,7 @@ import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListarClasesComponent } from './components/clase/listar-clases/listar-clases.component';
+import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'profesor/alumnos/:alumnoid', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
+  { path: 'profesor/clase/:id', component: ClaseViewComponent },
   { path: 'horario', component: TablaComponent },
   { path: 'horario/registro', component: FormularioComponent },
   //La ruta clase es prescindible, está para comprobar el componente
@@ -39,7 +41,7 @@ const routes: Routes = [
   // Rutas del tutor
   { path: 'tutor', component: TutorComponent },
   { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },
-  { path: 'tutor/tarea/:classId', component: TareaComponent },
+  { path: 'tutor/tarea/:id', component: TareaComponent },
   //Perfil
   { path: 'perfil', component: PerfilComponent },
   { path: '**', redirectTo: '' }

@@ -32,6 +32,7 @@ import { TutorComponent } from './components/tutor/tutor.component';
 import { ListarAlumnosComponent } from './components/tutor/listar-alumnos/listar-alumnos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListarClasesComponent } from './components/clase/listar-clases/listar-clases.component';
+import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ListarClasesComponent } from './components/clase/listar-clases/listar-c
     TutorComponent,
     ListarAlumnosComponent,
     PerfilComponent,
-    ListarClasesComponent
+    ListarClasesComponent,
+    ClaseViewComponent
 
 
   ],

@@ -400,7 +400,7 @@ export class TablaComponent {
       const x = horas.find(i => i.h === item.inicio)!.v;
       const y = dias.find(i => i.d === item.dia)!.v;
       total[x][y] = item.asignatura;
-      console.log(total)
+      //console.log(total)
     }
     let i = 0;
     for (let hora of horas2) {

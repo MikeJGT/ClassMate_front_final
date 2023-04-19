@@ -6,11 +6,12 @@ import { TutorService } from 'src/app/services/tutor.service';
 import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
-  selector: 'app-listar-alumnos',
-  templateUrl: './listar-alumnos.component.html',
-  styleUrls: ['./listar-alumnos.component.css']
+  selector: 'app-clase-view',
+  templateUrl: './clase-view.component.html',
+  styleUrls: ['./clase-view.component.css']
 })
-export class ListarAlumnosComponent {
+export class ClaseViewComponent {
+
 
   arrAlumnos: User[]
   token: any;

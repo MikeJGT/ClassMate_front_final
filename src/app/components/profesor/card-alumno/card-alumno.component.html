@@ -1,1 +1,16 @@
 <p>card-alumno works!</p>
+
+<div class="container">
+    <div class="row border border-primary-subtle p-3" *ngFor="let perfil of arrPerfil">
+        <div class="col-4 col-sm-4 ">
+            <p class="">{{perfil.nombre}} {{perfil.apellidos}}</p>
+        </div>
+        <div class="col-8 col-sm-8 ">
+            <p>DNI: {{perfil.dni}}</p>
+            <p>Direccion: {{perfil.direccion}}</p>
+            <p>Email: {{perfil.email}}</p>
+            <p>Genero: {{perfil.genero}}</p>
+            <p>Nacimiento: {{perfil.nacimiento}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<p>clase-view works!</p>
+<div class="container">
+    <ul class="lista">
+        <li *ngFor="let alumno of arrAlumnos" [routerLink]="['/profesor/alumnos/', alumno.id]">
+            {{alumno.nombre}} {{alumno.apellidos}}
+        </li>
+    </ul>
+</div>

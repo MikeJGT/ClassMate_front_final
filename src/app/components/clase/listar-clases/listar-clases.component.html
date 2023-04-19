@@ -1,5 +1,5 @@
 <div class="container">
     <div *ngFor="let clase of arrClases">
-        <p>{{clase.nombre}}</p>
+        <p [routerLink]="['/profesor/clase', clase.clase_id]">{{clase.nombre}}</p>
     </div>
 </div>
