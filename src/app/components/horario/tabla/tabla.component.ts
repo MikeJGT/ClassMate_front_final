@@ -367,21 +367,21 @@ export class TablaComponent {
     switch (this.token.role) {
       case 'profesor': {
         await this.profSv.getHorarioByProfesorId(this.token.user_id)
-        console.log('Horario para profesor', this.token.user_id);
+        //console.log('Horario para profesor', this.token.user_id);
         break;
       }
       case 'alumno': {
         await this.userSV.getHorarioByClaseId(this.token.user_id);
-        console.log('Horario para alumnos', this.token.user_id);
+        //console.log('Horario para alumnos', this.token.user_id);
         break;
       }
       case 'tutor': {
         await this.userSV.getHorarioByClaseId(this.token.user_id);
-        console.log('Horario para padres', this.token.user_id);
+        //console.log('Horario para padres', this.token.user_id);
         break;
       }
       default: {
-        console.log('No hay horario para tu rol');
+        //console.log('No hay horario para tu rol');
         break;
       }
     }
