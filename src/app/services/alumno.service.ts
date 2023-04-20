@@ -27,4 +27,15 @@ export class AlumnoService {
       this.httpClient.get<any>(`${this.baseUrl}/clases`)
     )
   }
+
+  insertAlumnoByClassID(alumnoValues: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/alumnoByClass`, alumnoValues)
+    )
+  }
+  deleteAlumnoByID(alumnoId: any) {
+    return firstValueFrom(
+      this.httpClient.delete<any>(`${this.baseUrl}/${alumnoId}`)
+    )
+  }
 }

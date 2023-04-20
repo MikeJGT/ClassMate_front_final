@@ -1,9 +1,21 @@
 <p>clase-view works!</p>
 <div class="container">
-    <button type="button" [routerLink]="['/profesor/clase/alumnos/assign' ]">Asignar alumno</button>
+
+    <form #formStudents="ngForm" (ngSubmit)="getDataFrom(formStudents)">
+        <select name="alumnoId" ngModel>
+            <option value="">Selecciona un alumno</option>
+            <option *ngFor="let alumno of alumnos" [value]="alumno.id">{{alumno.nombre}}</option>
+        </select>
+        <input type="submit" value="Select">
+    </form>
+
+
+
     <ul class="lista">
-        <li *ngFor="let alumno of arrAlumnos" [routerLink]="['/profesor/alumnos/', alumno.id]">
+        <li *ngFor="let alumno of arrAlumnos">
             {{alumno.nombre}} {{alumno.apellidos}}
+            <button (click)="deleteAlumno(alumno.id)">x</button>
+            <button [routerLink]="['/profesor/alumnos/', alumno.id]">Ver Alumnos</button>
         </li>
     </ul>
     <app-listar-asignaturas></app-listar-asignaturas>

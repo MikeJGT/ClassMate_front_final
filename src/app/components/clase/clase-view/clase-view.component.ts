@@ -12,9 +12,10 @@ import { UtilsService } from 'src/app/services/utils.service';
 })
 export class ClaseViewComponent {
 
-
   arrAlumnos: User[]
   token: any;
+  alumnos: any[];
+  id: any;
   constructor(
     private tutorService: TutorService,
     private activatedRoute: ActivatedRoute,
@@ -23,21 +24,27 @@ export class ClaseViewComponent {
   ) {
     this.arrAlumnos = [],
       this.token = this.utilSV.getToken()
+    this.alumnos = []
+    this.id = 0;
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async (params: any) => {
-      let id = params.id
+      this.id = params.id
       console.log('PARAMETROSSSS', params);
+      //Recoge datos de todos los alumnos
+      const res = await this.alumnoSV.getAlumnosWithClassID();
+      this.alumnos = res
+      console.log('Alumno', this.alumnos)
       switch (this.token.role) {
         case 'profesor': {
           // this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(id)
-          this.arrAlumnos = await this.alumnoSV.getAlumnosByClaseId(id)
+          this.arrAlumnos = await this.alumnoSV.getAlumnosByClaseId(this.id)
           console.log('Horario para profesor', this.token.user_id);
           break;
         }
         case 'tutor': {
-          this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(id)
+          this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(this.token.user_id)
           console.log('Horario para padres', this.token.user_id);
           break;
         }
@@ -49,6 +56,21 @@ export class ClaseViewComponent {
     })
     console.log(this.arrAlumnos);
 
+  }
+  async getDataFrom(pValue: any) {
+    console.log('PValueeeee', pValue.value)
+    const bodyForm = {
+      alumno_id: pValue.value.alumnoId,
+      clases_id: this.id
+    }
+    await this.alumnoSV.insertAlumnoByClassID(bodyForm);
+    //console.log('FOOORRMM', res);
+  }
+
+  //Borrar alumno
+  async deleteAlumno(idAlumno: any) {
+    //console.log(idAlumno)
+    await this.alumnoSV.deleteAlumnoByID(idAlumno)
   }
 
 }
