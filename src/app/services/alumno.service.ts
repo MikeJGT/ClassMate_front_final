@@ -21,4 +21,10 @@ export class AlumnoService {
       this.httpClient.get<any[]>(`http://localhost:3000/api/profesor/alumno/${alumnoId}`)
     )
   }
+
+  getAlumnosWithClassID() {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/clases`)
+    )
+  }
 }

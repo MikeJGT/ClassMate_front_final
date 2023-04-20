@@ -1,0 +1,18 @@
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.clases {
+    width: 350px;
+    background-color: ghostwhite;
+    border: 1px solid black;
+}
+
+.alumnos {
+    background-color: aliceblue;
+    width: 350px;
+    border: 1px solid black;
+}

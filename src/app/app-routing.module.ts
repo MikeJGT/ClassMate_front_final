@@ -20,6 +20,7 @@ import { PerfilComponent } from './components/perfil/perfil.component';
 import { ListarClasesComponent } from './components/clase/listar-clases/listar-clases.component';
 import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
 import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
+import { AssignAlumnoComponent } from './components/profesor/assign-alumno/assign-alumno.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'profesor/clase/:id', component: ClaseViewComponent },
   { path: 'profesor/asignaturas/:id/:nombre', component: CardAsignaturaComponent },
+  { path: 'profesor/clase/alumnos/assign', component: AssignAlumnoComponent },
 
   // Rutas Horario
   { path: 'horario', component: TablaComponent },
