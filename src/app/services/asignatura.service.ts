@@ -14,4 +14,10 @@ export class AsignaturaService {
       this.httpClient.get<any[]>(`${this.baseUrl}/${claseId}`)
     )
   }
+
+  getAllAsignaturas() {
+    return firstValueFrom(
+      this.httpClient.get<any[]>(`${this.baseUrl}/`)
+    )
+  }
 }
