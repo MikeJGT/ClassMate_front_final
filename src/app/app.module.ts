@@ -10,7 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/usuario/login/login.component';
 import { RegistroComponent } from './components/usuario/registro/registro.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardAlumnoComponent } from './components/profesor/card-alumno/card-alumno.component';
 import { MensajeriaComponent } from './components/profesor/mensajeria/mensajeria.component';
 import { ListarUsuariosComponent } from './components/profesor/listar-usuarios/listar-usuarios.component';
@@ -36,6 +36,7 @@ import { ClaseViewComponent } from './components/clase/clase-view/clase-view.com
 import { ListarAsignaturasComponent } from './components/asignatura/listar-asignaturas/listar-asignaturas.component';
 import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
 import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura/crear-asignatura.component';
+import { AssignAlumnoComponent } from './components/profesor/assign-alumno/assign-alumno.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura
     ClaseViewComponent,
     ListarAsignaturasComponent,
     CardAsignaturaComponent,
-    CrearAsignaturaComponent
+    CrearAsignaturaComponent,
+    AssignAlumnoComponent
 
 
   ],
@@ -76,6 +78,7 @@ import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
+    FormsModule,
     BrowserAnimationsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],

@@ -21,6 +21,7 @@ import { ListarClasesComponent } from './components/clase/listar-clases/listar-c
 import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
 import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
 import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura/crear-asignatura.component';
+import { AssignAlumnoComponent } from './components/profesor/assign-alumno/assign-alumno.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'profesor/asignaturas/:id/:nombre', component: CardAsignaturaComponent },
   //
   { path: 'profesor/crear', component: CrearAsignaturaComponent },
+  { path: 'profesor/clase/alumnos/assign', component: AssignAlumnoComponent },
 
   // Rutas Horario
   { path: 'horario', component: TablaComponent },
