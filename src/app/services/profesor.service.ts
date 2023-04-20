@@ -67,4 +67,11 @@ export class ProfesorService {
       this.httpClient.delete<any>(`${this.baseUrl}/api/tarea/${idTarea}`)
     )
   }
+
+  // insertar Asignatura
+  crearAsignatura(profesorId: any, formValues: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/api/asignatura/${profesorId}`, formValues)
+    )
+  }
 }
