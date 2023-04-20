@@ -31,6 +31,9 @@ const routes: Routes = [
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'profesor/clase/:id', component: ClaseViewComponent },
+  { path: 'profesor/asignaturas/:id/:nombre', component: CardAsignaturaComponent },
+
+  // Rutas Horario
   { path: 'horario', component: TablaComponent },
   { path: 'horario/registro', component: FormularioComponent },
   //La ruta clase es prescindible, está para comprobar el componente
@@ -47,7 +50,6 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
 
   //Asinaturas
-  { path: 'asignaturas/:id/:nombre', component: CardAsignaturaComponent },
 
 
   { path: '**', redirectTo: '' }

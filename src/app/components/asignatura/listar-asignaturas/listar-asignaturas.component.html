@@ -1,6 +1,7 @@
 <p>listar-asignaturas works!</p>
 <div class="container">
-    <h3 *ngFor="let asignatura of arrAsig" [routerLink]="['/asignaturas', asignatura.id,asignatura.asignatura]">
+    <h3 *ngFor="let asignatura of arrAsig"
+        [routerLink]="['/profesor/asignaturas', asignatura.id,asignatura.asignatura]">
         {{asignatura.asignatura}}
         {{asignatura.id}}
     </h3>

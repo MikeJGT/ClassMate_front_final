@@ -8,8 +8,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardAsignaturaComponent {
   asignatura: string
+  datosFormulario: any[]
+  idAsignatura: number = 0;
   constructor(private actRoute: ActivatedRoute) {
     this.asignatura = ''
+    this.datosFormulario = []
   }
 
   ngOnInit() {
@@ -27,6 +30,6 @@ export class CardAsignaturaComponent {
 
   getNombre($event: any) {
     console.log('EVENTO', $event);
-    this.asignatura = $event;
+    this.idAsignatura = $event;
   }
 }

@@ -1,6 +1,8 @@
 <p>card-asignatura works!</p>
 <div class="container">
+
     <h1>{{asignatura}}</h1>
-    <app-tarea-list></app-tarea-list>
-    <app-new-tarea></app-new-tarea>
+    <button type="click" [routerLink]="['/profesor/tarea/new']">Crear</button>
+    <app-tarea-list [asignaturaId]="idAsignatura"></app-tarea-list>
+    <app-new-tarea (formulario)="getNombre($event)"></app-new-tarea>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ProfesorService } from 'src/app/services/profesor.service';
@@ -13,38 +13,41 @@ export class NewTareaComponent {
   id: any
   nombreAsignatura: any
 
+  @Output() formulario: EventEmitter<any>
+
   constructor(
     private profesorService: ProfesorService,
     private actRoute: ActivatedRoute
   ) {
-    this.formularioTarea = new FormGroup(
-      {
-        asignaturas_id: new FormControl(),
-        clases_id: new FormControl(null, [
-          Validators.required
-        ]),
-        titulo: new FormControl(null, [
-          Validators.required
-        ]),
-        contenido: new FormControl(null, [
-          Validators.required
-        ]),
-        fecha_entrega: new FormControl(null, [
-          Validators.required
-        ])
-      }
-    )
+    this.formulario = new EventEmitter(),
+      this.formularioTarea = new FormGroup(
+        {
+          asignaturas_id: new FormControl(),
+          clases_id: new FormControl(null, [
+            Validators.required
+          ]),
+          titulo: new FormControl(null, [
+            Validators.required
+          ]),
+          contenido: new FormControl(null, [
+            Validators.required
+          ]),
+          fecha_entrega: new FormControl(null, [
+            Validators.required
+          ])
+        }
+      )
   }
 
   async onSubmit() {
     console.log(this.formularioTarea.value)
     const response = await this.profesorService.createTarea(this.formularioTarea.value)
     console.log(response)
-    this.actRoute.params.subscribe(async params => {
+    this.actRoute.params.subscribe(async (params: any) => {
       console.log(params)
-      this.id = params['id'];
-      this.nombreAsignatura = params['nombre'];
-      console.log('ASIGNATURA EMITIDA', this.nombreAsignatura)
+      let objId = { id: params.id, value: Math.random() }
+      this.formulario.emit(objId);
+      this.formularioTarea.reset()
       //lista de tareas para una asignatura
       //reutilizamos tarea-list-component   
 
