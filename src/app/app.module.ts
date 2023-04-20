@@ -35,6 +35,7 @@ import { ListarClasesComponent } from './components/clase/listar-clases/listar-c
 import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
 import { ListarAsignaturasComponent } from './components/asignatura/listar-asignaturas/listar-asignaturas.component';
 import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
+import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura/crear-asignatura.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { CardAsignaturaComponent } from './components/asignatura/card-asignatura
     ListarClasesComponent,
     ClaseViewComponent,
     ListarAsignaturasComponent,
-    CardAsignaturaComponent
+    CardAsignaturaComponent,
+    CrearAsignaturaComponent
 
 
   ],
