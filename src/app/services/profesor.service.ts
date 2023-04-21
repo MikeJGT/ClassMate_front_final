@@ -74,4 +74,11 @@ export class ProfesorService {
       this.httpClient.post<any>(`${this.baseUrl}/api/asignatura/${profesorId}`, formValues)
     )
   }
+
+  //Insertar Observacion
+  crearObservacion(observacionValues: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/api/profesor/observacion`, observacionValues)
+    )
+  }
 }

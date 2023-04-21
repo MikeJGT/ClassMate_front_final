@@ -1,0 +1,13 @@
+<p>new-observacion works!</p>
+<form [formGroup]="formObservacion" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Titulo</label>
+        <input type="text" class="form-control" formControlName="titulo">
+    </div>
+    <div>
+        <label class="form-label">Contenido</label>
+        <textarea class="form-control" cols="30" rows="10" formControlName="contenido"></textarea>
+    </div>
+
+    <input type="submit" value="Crear">
+</form>

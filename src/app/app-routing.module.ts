@@ -23,6 +23,7 @@ import { CardAsignaturaComponent } from './components/asignatura/card-asignatura
 import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura/crear-asignatura.component';
 import { AlumnoComponent } from './components/alumno/alumno.component';
 import { LoginGuard } from './guards/login.guard';
+import { NewObservacionComponent } from './components/observacion/new-observacion/new-observacion.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -42,6 +43,8 @@ const routes: Routes = [
   { path: 'profesor/clase/:id', component: ClaseViewComponent },
   { path: 'profesor/asignaturas/:id/:nombre', component: CardAsignaturaComponent },
   { path: 'profesor/crear', component: CrearAsignaturaComponent },
+  //Rutas observacion
+  { path: 'profesor/observacion/new/alumno/:id/:claseid', component: NewObservacionComponent },
   //Rutas de tarea
   { path: 'profesor/tarea', component: TareaListComponent },
   { path: 'profesor/tarea/new', component: NewTareaComponent },

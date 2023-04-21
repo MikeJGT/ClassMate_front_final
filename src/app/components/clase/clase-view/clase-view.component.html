@@ -16,6 +16,8 @@
             {{alumno.nombre}} {{alumno.apellidos}} {{alumno.clase}}
             <button (click)="deleteAlumno(alumno.hasClase_id)">x</button>
             <button [routerLink]="['/profesor/alumnos/', alumno.id]">Ver Alumnos</button>
+            <button [routerLink]="['/profesor/observacion/new/alumno', alumno.id, alumno.clases_id]">Crear
+                Observacion</button>
         </li>
     </ul>
     <app-listar-asignaturas></app-listar-asignaturas>

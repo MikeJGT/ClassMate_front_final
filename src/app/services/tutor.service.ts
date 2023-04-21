@@ -23,9 +23,10 @@ export class TutorService {
     )
   }
 
-  getTutorByName(pName: string) {
+
+  getObservationBytutorID(tutorid: number) {
     return firstValueFrom(
-      this.httpClient.get<any>(`${this.baseUrl}/api/usuarios/tutor/${pName}`)
+      this.httpClient.get<any>(`${this.baseUrl}/api/tutor/observacion/${tutorid}`)
     )
   }
 }

@@ -34,7 +34,7 @@ export class ClaseViewComponent {
       console.log('PARAMETROSSSS', params);
       //Recoge datos de todos los alumnos
       const res = await this.alumnoSV.getAlumnosWithClassID();
-      console.log('ALUMNOS CON CLASE ID', res);
+      console.log('ALUMNOS CON CLASE IDDDDDD', res);
       this.alumnos = res
       console.log('Alumno', this.alumnos)
 

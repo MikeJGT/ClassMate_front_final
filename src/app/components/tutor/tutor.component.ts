@@ -12,14 +12,15 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class TutorComponent {
 
   arrAlumnos: any[];
-
+  arrObservacion: any[];
 
 
   constructor(
     private tutorService: TutorService,
-    private utilsService: UtilsService
+    private utilsService: UtilsService,
   ) {
-    this.arrAlumnos = []
+    this.arrAlumnos = [];
+    this.arrObservacion = [];
   }
 
   async ngOnInit() {
@@ -28,6 +29,9 @@ export class TutorComponent {
     const idTutor = obj.user_id
     this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(idTutor);
     // console.log('Ejermmmm', this.arrAlumnos);
+    this.arrObservacion = await this.tutorService.getObservationBytutorID(idTutor);
+    console.log(this.arrObservacion);
+
   }
 
 
