@@ -1,0 +1,20 @@
+<p>alumno works!</p>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="asignaturas">
+            <ul>
+                <li *ngFor="let asignatura of arrAsignaturas">{{asignatura.nombre}}</li>
+            </ul>
+        </div>
+        <div class="perfil">
+            <app-perfil></app-perfil>
+        </div>
+        <div class="horario">
+            <app-tabla class="horario"></app-tabla>
+        </div>
+        <div class="tareas">tareas
+            <app-tarea-list></app-tarea-list>
+        </div>
+    </div>
+</div>

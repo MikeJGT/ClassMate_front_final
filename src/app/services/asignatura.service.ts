@@ -32,4 +32,10 @@ export class AsignaturaService {
       this.httpClient.post<any>(`${this.baseUrl}/api/horario`, values)
     )
   }
+
+  getAsignaturasByAlumnoID(alumnoId: any) {
+    return firstValueFrom(
+      this.httpClient.get<any[]>(`${this.baseUrl}/api/asignatura/alumnoAsignatura/${alumnoId}`)
+    )
+  }
 }

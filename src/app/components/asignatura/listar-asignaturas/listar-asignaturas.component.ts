@@ -9,7 +9,9 @@ import { AsignaturaService } from 'src/app/services/asignatura.service';
 })
 export class ListarAsignaturasComponent {
   arrAsig: any[]
-  constructor(private asigSV: AsignaturaService, private actRoute: ActivatedRoute) {
+  constructor(
+    private asigSV: AsignaturaService,
+    private actRoute: ActivatedRoute) {
     this.arrAsig = []
   }
 
@@ -17,7 +19,7 @@ export class ListarAsignaturasComponent {
     this.actRoute.params.subscribe(async params => {
       console.log(params)
       const id = params['id'];
-      //Recupera el alumnos a partir de su id;
+      //Recupera el alumno a partir de su id;
       this.arrAsig = await this.asigSV.getAsignaturasByClaseId(id);
       console.log(this.arrAsig);
 
