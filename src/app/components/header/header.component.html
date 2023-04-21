@@ -25,10 +25,14 @@
                         <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/login']">Login</a>
+                        <a class="nav-link" [routerLink]="['/login']" *ngIf="!userService.isLogged()">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/registro']">Register</a>
+                        <a class="nav-link" [routerLink]="['/registro']"
+                            *ngIf="userService.isLogged() && userService.isAlumno() && userService.isTutor()">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="onLogOut()" *ngIf="userService.isLogged()">LogOut</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
