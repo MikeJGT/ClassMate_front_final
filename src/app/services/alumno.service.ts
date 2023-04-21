@@ -10,6 +10,12 @@ export class AlumnoService {
   constructor(private httpClient: HttpClient) { }
 
 
+  getAllAlumnosFromUsuarios() {
+    return firstValueFrom(
+      this.httpClient.get<any[]>(`${this.baseUrl}`)
+    )
+  }
+
   getAlumnosByClaseId(claseId: any) {
     return firstValueFrom(
       this.httpClient.get<any[]>(`${this.baseUrl}/${claseId}`)

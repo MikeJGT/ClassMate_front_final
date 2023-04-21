@@ -4,7 +4,7 @@
     <form #formStudents="ngForm" (ngSubmit)="getDataFrom(formStudents)">
         <select name="alumnoId" ngModel>
             <option value="">Selecciona un alumno</option>
-            <option *ngFor="let alumno of alumnos" [value]="alumno.id">{{alumno.nombre}}</option>
+            <option *ngFor="let alumno of arrAlumnos" [value]="alumno.id">{{alumno.nombre}}</option>
         </select>
         <input type="submit" value="Select">
     </form>
@@ -12,9 +12,9 @@
 
 
     <ul class="lista">
-        <li *ngFor="let alumno of arrAlumnos">
-            {{alumno.nombre}} {{alumno.apellidos}}
-            <button (click)="deleteAlumno(alumno.id)">x</button>
+        <li *ngFor="let alumno of alumnos">
+            {{alumno.nombre}} {{alumno.apellidos}} {{alumno.clase}}
+            <button (click)="deleteAlumno(alumno.hasClase_id)">x</button>
             <button [routerLink]="['/profesor/alumnos/', alumno.id]">Ver Alumnos</button>
         </li>
     </ul>

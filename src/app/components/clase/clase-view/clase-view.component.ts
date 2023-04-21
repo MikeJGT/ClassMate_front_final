@@ -15,7 +15,7 @@ export class ClaseViewComponent {
   arrAlumnos: User[]
   token: any;
   alumnos: any[];
-  id: any;
+  classId: any;
   constructor(
     private tutorService: TutorService,
     private activatedRoute: ActivatedRoute,
@@ -23,36 +23,31 @@ export class ClaseViewComponent {
     private alumnoSV: AlumnoService
   ) {
     this.arrAlumnos = [],
-      this.token = this.utilSV.getToken()
-    this.alumnos = []
-    this.id = 0;
+      this.token = this.utilSV.getToken(),
+      this.alumnos = [],
+      this.classId = 0
   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(async (params: any) => {
-      this.id = params.id
+      this.classId = params.id
       console.log('PARAMETROSSSS', params);
       //Recoge datos de todos los alumnos
       const res = await this.alumnoSV.getAlumnosWithClassID();
+      console.log('ALUMNOS CON CLASE ID', res);
       this.alumnos = res
       console.log('Alumno', this.alumnos)
-      switch (this.token.role) {
-        case 'profesor': {
-          // this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(id)
-          this.arrAlumnos = await this.alumnoSV.getAlumnosByClaseId(this.id)
-          console.log('Horario para profesor', this.token.user_id);
-          break;
-        }
-        case 'tutor': {
-          this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(this.token.user_id)
-          console.log('Horario para padres', this.token.user_id);
-          break;
-        }
-        default: {
-          console.log('No hay horario para tu rol');
-          break;
-        }
-      }
+
+      const resAll = await this.alumnoSV.getAllAlumnosFromUsuarios();
+      this.arrAlumnos = resAll;
+      console.log('ALL ALUMNOS', resAll);
+
+      //this.arrAlumnos = await this.alumnoSV.getAlumnosByClaseId(this.id)
+      console.log('Horario para profesor', this.token.user_id);
+
+      //this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(this.token.user_id)
+      console.log('Horario para padres', this.token.user_id);
+
     })
     console.log(this.arrAlumnos);
 
@@ -61,10 +56,10 @@ export class ClaseViewComponent {
     console.log('PValueeeee', pValue.value)
     const bodyForm = {
       alumno_id: pValue.value.alumnoId,
-      clases_id: this.id
+      clases_id: this.classId
     }
     await this.alumnoSV.insertAlumnoByClassID(bodyForm);
-    //console.log('FOOORRMM', res);
+    console.log('FOOORRMM', bodyForm);
   }
 
   //Borrar alumno
