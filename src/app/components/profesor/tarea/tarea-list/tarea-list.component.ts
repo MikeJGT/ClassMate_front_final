@@ -65,6 +65,11 @@ export class TareaListComponent {
         this.tareas = await this.profesorService.getTareabyClassId(clases_id);
         break;
       }
+
+      case 'tutor': {
+        console.log('GESTIONARR TAREA DE HIJOS');
+        break;
+      }
       default: {
         alert('No existe tarea en el role ');
         break;

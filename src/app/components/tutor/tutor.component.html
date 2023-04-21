@@ -1,16 +1,29 @@
 <p>tutor works!</p>
 
-<form [formGroup]="searchForm" (ngSubmit)="getTutor()">
-    <div class="d-flex">
-        <input class="form-control me-3" type="text" placeholder="introduce un nombre" formControlName="nombre">
-        <button type="submit" class="btn btn-info">BUSCAR</button>
+
+<div class="container">
+    <div class="wrapper">
+        <div class="mensajeria">
+            <app-conversacion></app-conversacion>
+        </div>
+        <div class="perfil">
+            <app-perfil></app-perfil>
+        </div>
+        <div class="alumnos">
+            <div class="card-alumnos">
+                <div class="alumno" *ngFor="let alumno of arrAlumnos"
+                    [routerLink]="['/tutor/alumno/clase', alumno.clases_id]">
+                    <h3>{{alumno.nombre}}{{alumno.apellidos}}</h3>
+                    <p>Email: {{alumno.email}}</p>
+                    <p>Direccion: {{alumno.direccion}}</p>
+                    <p>Nacimiento: {{alumno.nacimiento}}</p>
+                    <p>ClaseID: {{alumno.clases_id}}</p>
+                    <p>Clase: {{alumno.clase}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="tareas">Observacion
+
+        </div>
     </div>
-    <section class="container mt-3">
-        <h1>Listado de Tutores</h1>
-        <hr>
-        <ul>
-            <li *ngFor="let tutor of arrTutor" [routerLink]="['/tutor/alumnos/',tutor.id]">{{tutor.nombre}}
-                {{tutor.apellidos}}</li>
-        </ul>
-    </section>
-</form>
+</div>

@@ -63,9 +63,15 @@ const routes: Routes = [
   //La ruta clase es prescindible, está para comprobar el componente
   { path: 'clase', component: ListarClasesComponent },
   // Rutas del tutor
-  { path: 'tutor', component: TutorComponent },
+  {
+    path: 'tutor', component: TutorComponent,
+    canActivate: [
+      () => inject(LoginGuard).canActivate(),
+      () => inject(LoginGuard).checkTutor()
+    ]
+  },
   { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },
-  { path: 'tutor/tarea/:id', component: TareaComponent },
+  { path: 'tutor/alumno/clase/:id', component: TareaComponent },
   //Perfil
   { path: 'perfil', component: PerfilComponent },
 

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/interfaces/user.interface';
 import { TutorService } from 'src/app/services/tutor.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-tutor',
@@ -10,32 +11,24 @@ import { TutorService } from 'src/app/services/tutor.service';
 })
 export class TutorComponent {
 
-  searchForm: FormGroup;
-  arrTutor: User[]
+  arrAlumnos: any[];
 
 
-  constructor(private tutorService: TutorService) {
-    this.arrTutor = []
-    this.searchForm = new FormGroup({
-      nombre: new FormControl('', [
-        Validators.required,
-      ])
-    }, [])
+
+  constructor(
+    private tutorService: TutorService,
+    private utilsService: UtilsService
+  ) {
+    this.arrAlumnos = []
   }
 
-  async getTutor(): Promise<void> {
-    try {
-      console.log(this.searchForm.value)
-      let name = this.searchForm.value.nombre
-      let response = await this.tutorService.getTutorByName(name)
-      this.arrTutor = response
-      if (response.length === 0) {
-        alert('No existe ese usuario')
-      }
-      console.log(response)
-
-    } catch (error) {
-      console.log(error)
-    }
+  async ngOnInit() {
+    const obj = this.utilsService.getToken();
+    //console.log('Hoollaa', obj.user_id);
+    const idTutor = obj.user_id
+    this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(idTutor);
+    // console.log('Ejermmmm', this.arrAlumnos);
   }
+
+
 }

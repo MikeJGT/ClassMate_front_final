@@ -16,10 +16,11 @@ export class TareaComponent {
     this.arrTareas = [];
   }
   ngOnInit() {
-    this.activatedRoute.params.subscribe(async data => {
-      const classId = data['classId'];
-      this.arrTareas = await this.profesorService.getTareabyClassId(classId);
-      console.log(this.arrTareas)
+    this.activatedRoute.params.subscribe(async (data: any) => {
+      //console.log('iddddddd', data.id)
+      const classID = data.id;
+      this.arrTareas = await this.profesorService.getTareabyClassId(classID);
+      //console.log('Rorrrrrrrrr', this.arrTareas)
 
     })
     //  await this.profesorService.getTareabyClassId()

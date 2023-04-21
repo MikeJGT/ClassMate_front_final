@@ -48,8 +48,11 @@ export class LoginComponent {
 
     } else if (token.role === 'alumno') {
       this.router.navigate(['/alumno']);
-    } else {
-      alert('No eres profesor ni alumno')
+    } else if (token.role === 'tutor') {
+      this.router.navigate(['/tutor'])
+    }
+    else {
+      alert('No eres profesor ni alumno y ni tutor')
     }
   }
 }
