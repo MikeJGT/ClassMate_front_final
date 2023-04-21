@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { UserService } from 'src/app/services/user.service';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent {
 
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private utilService: UtilsService
   ) {
     this.formulario = new FormGroup({
       email: new FormControl(null, [
@@ -40,6 +42,14 @@ export class LoginComponent {
     } catch (error) {
       console.log(error)
     }
-    this.router.navigate(['/profesor']);
+    const token = this.utilService.getToken()
+    if (token.role === 'profesor') {
+      this.router.navigate(['/profesor']);
+
+    } else if (token.role === 'alumno') {
+      this.router.navigate(['/alumno']);
+    } else {
+      alert('No eres profesor ni alumno')
+    }
   }
 }

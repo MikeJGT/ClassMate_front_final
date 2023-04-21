@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, inject } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/usuario/login/login.component';
@@ -21,20 +21,40 @@ import { ListarClasesComponent } from './components/clase/listar-clases/listar-c
 import { ClaseViewComponent } from './components/clase/clase-view/clase-view.component';
 import { CardAsignaturaComponent } from './components/asignatura/card-asignatura/card-asignatura.component';
 import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura/crear-asignatura.component';
+import { AlumnoComponent } from './components/alumno/alumno.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
-  { path: 'profesor', component: ProfesorComponent },
+  {
+    path: 'profesor', component: ProfesorComponent,
+    canActivate: [
+      () => inject(LoginGuard).canActivate(),
+      () => inject(LoginGuard).checkProfesor()
+    ]
+  },
   { path: 'profesor/alumnos', component: ListarUsuariosComponent },
   { path: 'profesor/alumnos/:id', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'profesor/clase/:id', component: ClaseViewComponent },
   { path: 'profesor/asignaturas/:id/:nombre', component: CardAsignaturaComponent },
-  //
   { path: 'profesor/crear', component: CrearAsignaturaComponent },
+  //Rutas de tarea
+  { path: 'profesor/tarea', component: TareaListComponent },
+  { path: 'profesor/tarea/new', component: NewTareaComponent },
+  { path: 'profesor/tarea/edit/:tareaid', component: EditTareaComponent },
+  // Rutas de alumno
+  {
+    path: 'alumno', component: AlumnoComponent,
+    canActivate: [
+      () => inject(LoginGuard).canActivate(),
+      () => inject(LoginGuard).checkAlumno()
+    ]
+  },
+
 
 
   // Rutas Horario
@@ -42,10 +62,6 @@ const routes: Routes = [
   { path: 'horario/registro', component: FormularioComponent },
   //La ruta clase es prescindible, está para comprobar el componente
   { path: 'clase', component: ListarClasesComponent },
-  //Rutas de tarea
-  { path: 'profesor/tarea', component: TareaListComponent },
-  { path: 'profesor/tarea/new', component: NewTareaComponent },
-  { path: 'profesor/tarea/edit/:tareaid', component: EditTareaComponent },
   // Rutas del tutor
   { path: 'tutor', component: TutorComponent },
   { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },

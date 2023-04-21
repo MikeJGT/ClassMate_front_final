@@ -25,8 +25,9 @@ export class TareaListComponent {
     this.activatedRoute.params.subscribe(async params => {
       //console.log(params['id'])
       const id = params['id'];
+
       //Decodifica user_id y role del token
-      this.listarTareaByRol(this.asignaturaId.id)
+      this.listarTareaByRol(id)
     })
 
   };
