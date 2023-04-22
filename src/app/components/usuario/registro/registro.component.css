@@ -1,12 +1,60 @@
 .error {
-    color: rgba(177, 19, 19, 0.74);
+    color: #c1d23e;
 }
 
-
-div {
-    max-width: 500px;
+.formulario {
+    max-width: 600px;
     margin: 0 auto;
-    background-color: black;
+    border: 1px solid black;
+    border-radius: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #24303c;
     color: white;
+}
+
+.formulario h4 {
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.form-control {
+    background-color: #24303c;
+    border: 1px solid #1f53c5;
+    color: white;
+}
+
+.form-select {
+    background-color: #24303c;
+    border: 1px solid #1f53c5;
+    color: white;
+}
+
+.btn-pass {
+    position: absolute;
+    top: 670px;
+    right: 550px;
+    background-color: #24303c;
+    border: 1px solid #1f53c5;
+}
+
+.btn {
+    background-color: #c1d23e;
+    border: 1px solid #c1d23e;
+    color: white;
+    width: 200px;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
     padding: 20px;
 }

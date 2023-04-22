@@ -1,4 +1,5 @@
-<div>
+<div class="formulario">
+    <h4>Sign Up</h4>
     <form [formGroup]="formularioRegister" (ngSubmit)="onSubmit()">
         <div class="mb-3">
             <label class="form-label">Nombre</label>
@@ -8,14 +9,14 @@
                 El campo nombre es requerido</p>
         </div>
         <div class="mb-3">
-            <label class="form-label">apellidos</label>
+            <label class="form-label">Apellidos</label>
             <input type="text" class="form-control" formControlName="apellidos">
 
             <p class="error" *ngIf="checkError('apellidos', 'required')">
                 El campo apellidos es requerido</p>
         </div>
         <div class="mb-3">
-            <label class="form-label">dni</label>
+            <label class="form-label">DNI</label>
             <input type="text" class="form-control" formControlName="dni">
 
             <p class="error" *ngIf="checkError('dni', 'required')">
@@ -31,7 +32,7 @@
         <div class="mb-3">
             <label class="form-label">Password</label>
             <input [type]="tipoPassword" class="form-control" formControlName="password">
-            <button type="button" (click)="cambiarTipoPassword()">👀</button>
+            <button class="btn-pass" type="button" (click)="cambiarTipoPassword()">👀</button>
 
             <p class="error" *ngIf="checkError('password', 'required')">
                 El campo password es requerido</p>
@@ -49,7 +50,7 @@
         </div>
         <div class="mb-3">
             <label class="form-label">Genero</label>
-            <select class="form-control" formControlName="genero">
+            <select class="form-select" formControlName="genero">
                 <option value="m">Hombre</option>
                 <option value="f">Mujer</option>
             </select>
@@ -71,6 +72,9 @@
             <p class="error" *ngIf="checkError('nacimiento', 'required')">
                 El campo nacimiento es requerido</p>
         </div>
-        <input type="submit" class="btn btn-info" value="Register" [disabled]="!formularioRegister.valid">
+        <div class="boton">
+            <input type="submit" class="btn btn-info" value="Sign Up" [disabled]="!formularioRegister.valid">
+        </div>
+
     </form>
 </div>
