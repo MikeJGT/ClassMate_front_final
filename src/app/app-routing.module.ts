@@ -36,7 +36,7 @@ const routes: Routes = [
     ]
   },
   { path: 'profesor/alumnos', component: ListarUsuariosComponent },
-  { path: 'profesor/alumnos/:id', component: CardAlumnoComponent },
+  { path: 'profesor/alumnos/:id/:claseId', component: CardAlumnoComponent },
   { path: 'profesor/conversacion', component: ConversacionComponent },
   { path: 'profesor/mensajeria/:conversacionID', component: MensajeriaComponent },
   { path: 'profesor/clase/:id', component: ClaseViewComponent },
