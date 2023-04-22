@@ -1,14 +1,3 @@
-<!--OPCION A
-    
-    <div>
-    
-    <nav>
-        <ul>
-            <li [routerLink]="['/login']" class="btn btn-info">Login</li>
-        </ul>
-    </nav>
-</div> -->
-
 <div>
     <!-- Navbar OPCION B -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
@@ -25,6 +14,18 @@
                         <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/alumno']"
+                            *ngIf="userService.isLogged() && !userService.isAlumno()">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/tutor']"
+                            *ngIf="userService.isLogged() && !userService.isTutor()">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/profesor']"
+                            *ngIf="userService.isLogged() && !userService.isProfesor()">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/login']" *ngIf="!userService.isLogged()">Login</a>
                     </li>
                     <li class="nav-item">
@@ -38,7 +39,6 @@
             </div>
         </div>
     </nav>
-    <!-- Navbar -->
 
 
 </div>

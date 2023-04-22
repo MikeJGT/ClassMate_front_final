@@ -58,4 +58,13 @@ export class UserService {
     return true
   }
 
+  isProfesor() {
+    const obj = this.utilService.getToken()
+
+    if (obj.role === 'profesor') {
+      return false
+    }
+    return true
+  }
+
 }

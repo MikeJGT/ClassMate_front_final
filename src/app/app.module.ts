@@ -41,6 +41,8 @@ import { NewObservacionComponent } from './components/observacion/new-observacio
 import { NotasViewComponent } from './components/notas-view/notas-view.component';
 import { NewConversacionComponent } from './components/new-conversacion/new-conversacion.component';
 import { AlumnoViewComponent } from './components/alumno-view/alumno-view.component';
+import { MatTabsModule } from '@angular/material/tabs'
+
 
 
 @NgModule({
@@ -88,7 +90,8 @@ import { AlumnoViewComponent } from './components/alumno-view/alumno-view.compon
     MatSelectModule,
     MatInputModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }],
   bootstrap: [AppComponent]

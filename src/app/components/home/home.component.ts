@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  mostrar: boolean
+
+  constructor() {
+    this.mostrar = true;
+  }
+
+  mostrarClick() {
+    this.mostrar = false
+  }
 }

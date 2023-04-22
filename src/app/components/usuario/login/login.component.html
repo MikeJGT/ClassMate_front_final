@@ -1,16 +1,21 @@
-<div class="formulario">
-    <h4>Formulario Login</h4>
-    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="text" class="form-control" formControlName="email">
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="text" class="form-control" formControlName="password">
-        </div>
-        <div class="boton">
-            <input type="submit" value="Enviar" class="btn btn-info">
-        </div>
-    </form>
+<div class="container position-relative">
+    <div class="formulario">
+        <h4>Login</h4>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="text" class="form-control" formControlName="password">
+            </div>
+            <div class="boton">
+                <input type="submit" value="Enviar" class="btn btn-info">
+            </div>
+        </form>
+    </div>
+    <div class="nube">
+        <img src="../../../../assets/images/nube.png" class="img-fluid">
+    </div>
 </div>
