@@ -1,0 +1,8 @@
+<p>new-conversacion works!</p>
+<form [formGroup]="formConversacion" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label class="form-label">Asunto</label>
+        <input type="text" class="form-control" formControlName="asunto">
+    </div>
+    <input type="submit" value="Registrar">
+</form>

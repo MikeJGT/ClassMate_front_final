@@ -1,3 +1,4 @@
+<button [routerLink]="['/profesor/conversacion/new']">Crear</button>
 <div *ngFor="let conversacion of arrConversaciones" [routerLink]="['/profesor/mensajeria',conversacion.id]">
     <p>Asunto: {{conversacion.asunto}}</p>
 </div>

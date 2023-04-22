@@ -29,4 +29,10 @@ export class TutorService {
       this.httpClient.get<any>(`${this.baseUrl}/api/tutor/observacion/${tutorid}`)
     )
   }
+
+  getAllTutor() {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/tutor/all`)
+    )
+  }
 }
