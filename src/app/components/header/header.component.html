@@ -31,6 +31,18 @@
                         <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/alumno']"
+                            *ngIf="userService.isLogged() && !userService.isAlumno()">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/tutor']"
+                            *ngIf="userService.isLogged() && !userService.isTutor()">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" [routerLink]="['/profesor']"
+                            *ngIf="userService.isLogged() && !userService.isProfesor()">Inicio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/login']" *ngIf="!userService.isLogged()">Login</a>
                     </li>
                     <li class="nav-item">
@@ -47,7 +59,6 @@
 
         </div>
     </nav>
-    <!-- Navbar -->
 
 
 </div>
