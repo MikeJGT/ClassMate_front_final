@@ -12,7 +12,7 @@
         <div class="alumnos">
             <div class="card-alumnos">
                 <div class="alumno" *ngFor="let alumno of arrAlumnos"
-                    [routerLink]="['/tutor/alumno/clase', alumno.clases_id]">
+                    [routerLink]="['/tutor/alumno/clase',alumno.id, alumno.clases_id]">
                     <h3>{{alumno.nombre}}{{alumno.apellidos}}</h3>
                     <p>Email: {{alumno.email}}</p>
                     <p>Direccion: {{alumno.direccion}}</p>
@@ -22,6 +22,7 @@
                 </div>
             </div>
         </div>
+
         <div class="observaciones">
             <h2>Observacion</h2>
             <article class="observacion" *ngFor="let observacion of arrObservacion">

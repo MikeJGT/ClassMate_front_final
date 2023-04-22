@@ -74,7 +74,7 @@ const routes: Routes = [
     ]
   },
   { path: 'tutor/alumnos/:tutorId', component: ListarAlumnosComponent },
-  { path: 'tutor/alumno/clase/:id', component: TareaComponent },
+  { path: 'tutor/alumno/clase/:alumnoId/:id', component: TareaComponent },
   //Perfil
   { path: 'perfil', component: PerfilComponent },
 
