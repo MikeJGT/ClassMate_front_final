@@ -24,8 +24,8 @@ export class NotasViewComponent {
     this.notas = [];
     this.displayedColumns = ['asignatura', 'nota'];
     this.objToGetNotas = {
-      alumno_id: '',
-      clases_id: ''
+      // alumno_id: '',
+      // clases_id: ''
     };
   }
 
@@ -63,5 +63,18 @@ export class NotasViewComponent {
     //o no muestra los insertNotasOnInit 
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
     console.log('NOTAS 2', this.notas)
+  }
+
+  async ngOnChanges() {
+
+    this.objToGetNotas.alumno_id = this.alumnoId;
+    this.objToGetNotas.clases_id = this.claseID;
+    console.log('CLASE ID', this.claseID);
+
+    this.asignaturas = await this.asigSV.getAsignaturasByClaseId(this.claseID);
+    console.log('Asignaturas', this.asignaturas);
+    //console.log(this.perfil)
+    this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
+    console.log('Notas', this.notas);
   }
 }

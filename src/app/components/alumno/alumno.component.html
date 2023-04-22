@@ -4,7 +4,8 @@
     <div class="wrapper">
         <div class="asignaturas">
             <ul>
-                <li *ngFor="let asignatura of arrAsignaturas">{{asignatura.nombre}}</li>
+                <li *ngFor="let asignatura of arrAsignaturas" [routerLink]="['/alumno/notas']">{{asignatura.nombre}}
+                </li>
             </ul>
         </div>
         <div class="perfil">

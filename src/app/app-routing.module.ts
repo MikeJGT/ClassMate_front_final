@@ -25,6 +25,7 @@ import { AlumnoComponent } from './components/alumno/alumno.component';
 import { LoginGuard } from './guards/login.guard';
 import { NewObservacionComponent } from './components/observacion/new-observacion/new-observacion.component';
 import { NewConversacionComponent } from './components/new-conversacion/new-conversacion.component';
+import { AlumnoViewComponent } from './components/alumno-view/alumno-view.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
@@ -61,8 +62,9 @@ const routes: Routes = [
       () => inject(LoginGuard).canActivate(),
       () => inject(LoginGuard).checkAlumno()
     ]
+  }, {
+    path: 'alumno/notas', component: AlumnoViewComponent
   },
-
 
 
   // Rutas Horario
