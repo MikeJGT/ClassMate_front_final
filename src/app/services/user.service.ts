@@ -43,7 +43,7 @@ export class UserService {
   isAlumno() {
     const obj = this.utilService.getToken()
 
-    if (obj.role === 'alumno') {
+    if (obj.role !== 'alumno') {
       return false
     }
     return true
@@ -52,10 +52,27 @@ export class UserService {
   isTutor() {
     const obj = this.utilService.getToken()
 
-    if (obj.role === 'tutor') {
+    if (obj.role !== 'tutor') {
       return false
     }
     return true
   }
+
+
+  isProfesor() {
+    const obj = this.utilService.getToken()
+
+    if (obj.role !== 'profesor') {
+      return false
+    }
+    return true
+  }
+
+  getGenre(id: any) {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/usuarios/genero/${id}`)
+    )
+  }
+
 
 }

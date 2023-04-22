@@ -1,24 +1,30 @@
-<!--OPCION A
-    
-    <div>
-    
-    <nav>
-        <ul>
-            <li [routerLink]="['/login']" class="btn btn-info">Login</li>
-        </ul>
-    </nav>
-</div> -->
-
 <div>
     <!-- Navbar OPCION B -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container">
             <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/logo.png"></a>
+
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
+            <div class="cardUser" *ngIf="userService.isLogged()">
+                <figure class="perfil">
+                    <img *ngIf="userService.isTutor() && male" src="../../../assets/images/tutor.jpg">
+                    <img *ngIf="userService.isTutor() && !male" src="../../../assets/images/tutorA.jpg">
+                    <img *ngIf="userService.isAlumno() && male" src="../../../assets/images/alumnO.jpg">
+                    <img *ngIf="userService.isAlumno() && !male" src="../../../assets/images/alumnA.jpg">
+                    <img *ngIf="userService.isProfesor() && male" src="../../../assets/images/profesor.jpg">
+                    <img *ngIf="userService.isProfesor() && !male" src="../../../assets/images/profesora.jpg">
+                </figure>
+                <div>
+                    {{name}}
+                </div>
+            </div>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -34,8 +40,11 @@
                     <li class="nav-item">
                         <a class="nav-link" (click)="onLogOut()" *ngIf="userService.isLogged()">LogOut</a>
                     </li>
+
                 </ul>
             </div>
+
+
         </div>
     </nav>
     <!-- Navbar -->
