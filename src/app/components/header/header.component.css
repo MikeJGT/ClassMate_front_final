@@ -5,3 +5,8 @@ ul {
 li {
     cursor: pointer;
 }
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
