@@ -39,6 +39,7 @@ import { CrearAsignaturaComponent } from './components/profesor/crear-asignatura
 import { AlumnoComponent } from './components/alumno/alumno.component';
 import { NewObservacionComponent } from './components/observacion/new-observacion/new-observacion.component';
 import { NotasViewComponent } from './components/notas-view/notas-view.component';
+import { NewConversacionComponent } from './components/new-conversacion/new-conversacion.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { NotasViewComponent } from './components/notas-view/notas-view.component
     CrearAsignaturaComponent,
     AlumnoComponent,
     NewObservacionComponent,
-    NotasViewComponent
+    NotasViewComponent,
+    NewConversacionComponent
 
 
   ],

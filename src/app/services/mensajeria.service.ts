@@ -22,4 +22,14 @@ export class MensajeriaService {
       this.httpClient.get<any>(`${this.baseUrl}/mensaje/${id}`)
     )
   }
+  insertConversacion(conversacionValues: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}`, conversacionValues)
+    )
+  }
+  insertMensaje(mensajeValues: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/mensaje`, mensajeValues)
+    )
+  }
 }

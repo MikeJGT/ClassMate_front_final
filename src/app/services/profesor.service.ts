@@ -81,4 +81,9 @@ export class ProfesorService {
       this.httpClient.post<any>(`${this.baseUrl}/api/profesor/observacion`, observacionValues)
     )
   }
+  getAllProfesor() {
+    return firstValueFrom(
+      this.httpClient.get<any>(`${this.baseUrl}/api/profesor/all`)
+    )
+  }
 }
