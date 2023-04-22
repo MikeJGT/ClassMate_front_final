@@ -42,12 +42,6 @@ export class ClaseViewComponent {
       this.arrAlumnos = resAll;
       console.log('ALL ALUMNOS', resAll);
 
-      //this.arrAlumnos = await this.alumnoSV.getAlumnosByClaseId(this.id)
-      console.log('Horario para profesor', this.token.user_id);
-
-      //this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(this.token.user_id)
-      console.log('Horario para padres', this.token.user_id);
-
     })
     console.log(this.arrAlumnos);
 

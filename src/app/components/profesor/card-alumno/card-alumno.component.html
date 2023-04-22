@@ -1,6 +1,7 @@
 <p>card-alumno works!</p>
 
 <div class="container">
+
     <div class="row border border-primary-subtle p-3">
         <div class="col-4 col-sm-4 ">
             <p class="">{{perfil.nombre}} {{perfil.apellidos}}</p>
@@ -13,4 +14,44 @@
             <p>Nacimiento: {{perfil.nacimiento}}</p>
         </div>
     </div>
+
+    <form [formGroup]="formularioNota" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Asignatura</mat-label>
+            <mat-select formControlName="id">
+                <mat-option *ngFor="let nota of notas" [value]="nota.id">{{nota.asignatura}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nota</mat-label>
+            <mat-select formControlName="nota" placeholder="">
+                <mat-option value="insuficiente">Insuficiente</mat-option>
+                <mat-option value="suficiente">Suficiente</mat-option>
+                <mat-option value="bien">Bien</mat-option>
+                <mat-option value="notable">notable</mat-option>
+                <mat-option value="sobresaliente">Sobresaliente</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <input type="submit" value="Registrar">
+
+    </form>
+
+
+    <table mat-table [dataSource]="notas" class=" table table-hover table-bordered">
+
+        <ng-container matColumnDef="asignatura">
+            <th mat-header-cell *matHeaderCellDef> Asignatura </th>
+            <td mat-cell *matCellDef="let element"> {{element.asignatura}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="nota">
+            <th mat-header-cell *matHeaderCellDef> Calificacion </th>
+            <td mat-cell *matCellDef="let element"> {{element.nota}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
 </div>
