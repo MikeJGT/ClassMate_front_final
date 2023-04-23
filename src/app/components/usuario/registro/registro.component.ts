@@ -15,10 +15,12 @@ export class RegistroComponent {
         Validators.required
       ]),
       apellidos: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.maxLength(30)
       ]),
       email: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
       ]),
       password: new FormControl(null, [
         Validators.required
