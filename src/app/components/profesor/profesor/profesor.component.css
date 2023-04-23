@@ -54,19 +54,11 @@
     grid-column: 3/4;
     grid-row: 3 / 4;
     padding: 20px;
-    <<<<<<< HEAD background-image: url(../../../../assets/images/sobre.png);
+    background-image: url(../../../../assets/images/sobre.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-blend-mode: multiply;
     background-color: #dfeaf1;
     color: black;
-}
-
-
-.mat-tab-group {
-    height: 600px;
-    =======border-radius: 1em;
-    background-color: #dfeaf1;
-    >>>>>>>trabajo_Fran
 }
