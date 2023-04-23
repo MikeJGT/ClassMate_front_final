@@ -13,7 +13,7 @@ export class HeaderComponent {
   male: any
   name: any
   constructor(
-    private router: Router,
+    public router: Router,
     public userService: UserService,
     private utilService: UtilsService
   ) {
