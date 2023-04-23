@@ -1,80 +1,91 @@
-<div class="formulario">
-    <h4>Sign Up</h4>
-    <form [formGroup]="formularioRegister" (ngSubmit)="onSubmit()">
-        <div class="mb-3">
-            <label class="form-label">Nombre</label>
-            <input type="text" class="form-control" formControlName="nombre">
+<div class="container position-relative">
+    <div class="formulario">
+        <h4>Sign Up</h4>
+        <form [formGroup]="formularioRegister" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" formControlName="nombre">
 
-            <p class="error" *ngIf="checkError('nombre', 'required')">
-                El campo nombre es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Apellidos</label>
-            <input type="text" class="form-control" formControlName="apellidos">
+                <p class="error" *ngIf="checkError('nombre', 'required')">
+                    El campo nombre es requerido</p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Apellidos</label>
+                <input type="text" class="form-control" formControlName="apellidos">
 
-            <p class="error" *ngIf="checkError('apellidos', 'required')">
-                El campo apellidos es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">DNI</label>
-            <input type="text" class="form-control" formControlName="dni">
+                <p class="error" *ngIf="checkError('apellidos', 'required')">
+                    El campo apellidos es requerido</p>
+                <p class="error" *ngIf="checkError('apellidos', 'maxlength')">
+                    El campo apellido puede tener maximo 30 caracteres</p>
 
-            <p class="error" *ngIf="checkError('dni', 'required')">
-                El campo dni es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">DNI</label>
+                <input type="text" class="form-control" formControlName="dni">
 
-            <p class="error" *ngIf="checkError('email', 'required')">
-                El campo email es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input [type]="tipoPassword" class="form-control" formControlName="password">
-            <button class="btn-pass" type="button" (click)="cambiarTipoPassword()">👀</button>
+                <p class="error" *ngIf="checkError('dni', 'required')">
+                    El campo dni es requerido</p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email">
 
-            <p class="error" *ngIf="checkError('password', 'required')">
-                El campo password es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Rol</label>
-            <select class="form-control" formControlName="rol">
-                <option value="alumno">Alumno</option>
-                <option value="profesor">Profesor</option>
-                <option value="tutor">Tutor</option>
-            </select>
+                <p class="error" *ngIf="checkError('email', 'required')">
+                    El campo email es requerido</p>
+                <p class="error" *ngIf="checkError('email', 'pattern')">El email tiene un formato incorrecto</p>
+            </div>
+            <div class="mb-3">
 
-            <p class="error" *ngIf="checkError('rol', 'required')">
-                El campo rol es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Genero</label>
-            <select class="form-select" formControlName="genero">
-                <option value="m">Hombre</option>
-                <option value="f">Mujer</option>
-            </select>
-            <p class="error" *ngIf="checkError('genero', 'required')">
-                El campo genero es requerido</p>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Dirección</label>
-            <input type="text" class="form-control" formControlName="direccion">
+                <label class="form-label">Password</label>
+                <div class="password">
+                    <input [type]="tipoPassword" class="form-control" formControlName="password">
+                    <button class="btn-pass" type="button" (click)="cambiarTipoPassword()">👀</button>
 
-            <p class="error" *ngIf="checkError('direccion', 'required')">
-                El campo dirección es requerido</p>
-        </div>
+                    <p class="error" *ngIf="checkError('password', 'required')">
+                        El campo password es requerido</p>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Rol</label>
+                <select class="form-control" formControlName="rol">
+                    <option value="alumno">Alumno</option>
+                    <option value="profesor">Profesor</option>
+                    <option value="tutor">Tutor</option>
+                </select>
 
-        <div class="mb-3">
-            <label class="form-label">Nacimiento</label>
-            <input type="date" class="form-control" formControlName="nacimiento">
+                <p class="error" *ngIf="checkError('rol', 'required')">
+                    El campo rol es requerido</p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Genero</label>
+                <select class="form-select" formControlName="genero">
+                    <option value="m">Hombre</option>
+                    <option value="f">Mujer</option>
+                </select>
+                <p class="error" *ngIf="checkError('genero', 'required')">
+                    El campo genero es requerido</p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Dirección</label>
+                <input type="text" class="form-control" formControlName="direccion">
 
-            <p class="error" *ngIf="checkError('nacimiento', 'required')">
-                El campo nacimiento es requerido</p>
-        </div>
-        <div class="boton">
-            <input type="submit" class="btn btn-info" value="Sign Up" [disabled]="!formularioRegister.valid">
-        </div>
+                <p class="error" *ngIf="checkError('direccion', 'required')">
+                    El campo dirección es requerido</p>
+            </div>
 
-    </form>
+            <div class="mb-3">
+                <label class="form-label">Nacimiento</label>
+                <input type="date" class="form-control" formControlName="nacimiento">
+
+                <p class="error" *ngIf="checkError('nacimiento', 'required')">
+                    El campo nacimiento es requerido</p>
+            </div>
+            <div class="boton">
+                <input type="submit" class="btn btn-info" value="Sign Up" [disabled]="!formularioRegister.valid">
+            </div>
+        </form>
+    </div>
+    <div class="nube">
+        <img src="../../../../assets/images/nube.png" class="img-fluid">
+    </div>
 </div>

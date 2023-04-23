@@ -3,7 +3,7 @@
 }
 
 .formulario {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
     border: 1px solid black;
     border-radius: 15px;
@@ -21,7 +21,7 @@
 }
 
 form {
-    width: 500px;
+    width: 400px;
     margin: 0 auto;
     padding: 10px;
 }
@@ -38,10 +38,14 @@ form {
     color: white;
 }
 
+.password {
+    position: relative;
+}
+
 .btn-pass {
     position: absolute;
-    top: 670px;
-    right: 550px;
+    top: 8px;
+    right: 8px;
     background-color: #24303c;
     border: 1px solid #1f53c5;
 }
@@ -57,4 +61,11 @@ form {
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+
+.nube {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    z-index: -1;
 }
