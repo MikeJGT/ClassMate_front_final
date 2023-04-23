@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-registro',
@@ -9,8 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class RegistroComponent {
   formularioRegister: FormGroup;
   tipoPassword: string
-  constructor() {
+  constructor(private userSV: UserService) {
     this.formularioRegister = new FormGroup({
+
       nombre: new FormControl(null, [
         Validators.required
       ]),
@@ -18,14 +20,14 @@ export class RegistroComponent {
         Validators.required,
         Validators.maxLength(30)
       ]),
+      dni: new FormControl(null, [
+        Validators.required
+      ]),
       email: new FormControl(null, [
         Validators.required,
         Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
       ]),
       password: new FormControl(null, [
-        Validators.required
-      ]),
-      dni: new FormControl(null, [
         Validators.required
       ]),
       rol: new FormControl(null, [
@@ -44,8 +46,10 @@ export class RegistroComponent {
     this.tipoPassword = 'password';
   }
 
-  onSubmit() {
-    console.log(this.formularioRegister.value)
+  async onSubmit() {
+    console.log('Formulario', this.formularioRegister.value)
+    const response = await this.userSV.createUser(this.formularioRegister.value);
+    console.log(response);
     this.formularioRegister.reset();
   }
   cambiarTipoPassword() {

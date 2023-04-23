@@ -32,6 +32,12 @@ export class UserService {
     )
   }
 
+  createUser(formulario: any) {
+    return firstValueFrom(
+      this.httpClient.post<any>(`${this.baseUrl}/api/usuarios/registro`, formulario)
+    )
+  }
+
   isLogged(): boolean {
     if (localStorage.getItem('token')) {
       return true;
