@@ -1,13 +1,13 @@
-<div class="container">
+<!-- <div class="container">
     <div class="wrapper">
-        <div class="clases">
+        <div class="col-md-6 clases">
             <app-listar-clases></app-listar-clases>
             <div class="boton">
                 <input type="submit" value="Crear Asignatura" class="btn btn-info" [routerLink]="['/profesor/crear']">
             </div>
 
         </div>
-        <div class="perfil">
+        <div class="col-md-6 perfil">
             <app-perfil></app-perfil>
         </div>
         <div class="horario">
@@ -15,7 +15,40 @@
         </div>
         <div class="mensajeria">mensajeria
             <app-conversacion class="mensajes"></app-conversacion>
-            <button>mensaje</button>
+
         </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-11 perfil">
+                <app-perfil></app-perfil>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-md-11 mensajeria">
+                <p>mensajeria</p>
+                <app-conversacion class="mensajes"></app-conversacion>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 clases">
+                <app-listar-clases></app-listar-clases>
+                <div class="boton">
+                    <input type="submit" value="Crear Asignatura" class="btn btn-info"
+                        [routerLink]="['/profesor/crear']">
+                </div>
+            </div>
+            <div class="col-md-8 horario">
+                <app-tabla class="horarioTabla"></app-tabla>
+            </div>
+
+
+        </div>
+
     </div>
 </div>
