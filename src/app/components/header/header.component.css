@@ -32,8 +32,8 @@ li {
 }
 
 .logo {
-    width: 150px;
-    height: 150px;
+    width: 125px;
+    height: 100px;
 }
 
 
@@ -53,6 +53,7 @@ li {
     border: 1px solid #c1d23e;
     border-radius: 5px;
     margin-left: 20px;
+    margin-bottom: 20px;
     font-size: 1.5em;
     font-family: 'Caveat', cursive;
 }
@@ -85,7 +86,7 @@ li {
 }
 
 .btn {
-    height: 50%;
+    height: 75%;
     font-family: 'Caveat', cursive;
     border-color: #c1d23e;
     transition: 0.5s;
