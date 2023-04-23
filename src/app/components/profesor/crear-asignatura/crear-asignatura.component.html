@@ -1,9 +1,15 @@
-<p>crear-asignatura works!</p>
-
-<form [formGroup]="formularioAsignatura" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">NOMBRE ASIGNATURA</label>
-        <input type="text" class="form-control" formControlName="nombre">
+<div class="container position-relative">
+    <div class="formulario">
+        <h4>ASIGNATURA</h4>
+        <form [formGroup]="formularioAsignatura" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">NOMBRE ASIGNATURA</label>
+                <input type="text" class="form-control" formControlName="nombre">
+            </div>
+            <button type="submit" class="btn btn-info" value="crear">CREAR</button>
+        </form>
     </div>
-    <button type="submit" class="btn btn-info" value="crear">ENVIAR</button>
-</form>
+    <div class="nube">
+        <img src="../../../../assets/images/nube.png" class="img-fluid">
+    </div>
+</div>
