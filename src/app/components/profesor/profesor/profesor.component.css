@@ -1,4 +1,4 @@
-@import url(../../clase/listar-clases/listar-clases.component.css);
+/* @import url(../../clase/listar-clases/listar-clases.component.css); */
 
 .wrapper {
     display: grid;
@@ -10,29 +10,51 @@
 .clases {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
-    border: 1px solid black;
     height: auto;
+    border-radius: 1em;
+    background-color: #dfeaf1;
+    background-image: url(../../../../assets/images/lapiz.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
+.btn {
+    background-color: #c1d23e;
+    border: 1px solid #c1d23e;
+    color: black;
+    width: 150px;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 .perfil {
     grid-column: 2 / 4;
     grid-row: 1 / 3;
-    border: 1px solid black;
+    border-radius: 1em;
+    background-color: #dfeaf1;
 }
 
 .horario {
     grid-column: 2/ 3;
     grid-row: 3 / 3;
-    border: 1px solid black;
+    border-radius: 1em;
+    background-color: #dfeaf1;
+}
+
+.horarioTabla {
+    margin-top: 20px;
 }
 
 .mensajeria {
     grid-column: 3/4;
     grid-row: 3 / 4;
-    border: 1px solid black;
     padding: 20px;
-    background-image: url(../../../../assets/images/sobre.png);
+    <<<<<<< HEAD background-image: url(../../../../assets/images/sobre.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -44,4 +66,7 @@
 
 .mat-tab-group {
     height: 600px;
+    =======border-radius: 1em;
+    background-color: #dfeaf1;
+    >>>>>>>trabajo_Fran
 }

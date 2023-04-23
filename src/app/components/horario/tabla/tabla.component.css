@@ -13,3 +13,9 @@
 .mat-column-select {
     overflow: initial;
 }
+
+.table {
+    margin-top: 20px;
+    background-color: #dfeaf1;
+    border: 1px solid #c1d23e;
+}

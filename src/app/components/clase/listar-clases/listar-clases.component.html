@@ -1,4 +1,4 @@
-<div>
+<div class="lista">
     <ul>
         <li *ngFor="let clase of arrClases" [routerLink]="['/profesor/clase', clase.clase_id]">{{clase.nombre}}</li>
     </ul>
