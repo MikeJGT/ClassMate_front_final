@@ -1,11 +1,11 @@
 @import url(../../clase/listar-clases/listar-clases.component.css);
 
-/*.wrapper {
+.wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
-} */
+}
 
 .clases {
     grid-column: 1 / 2;
@@ -31,9 +31,4 @@
     grid-row: 3 / 4;
     border: 1px solid black;
     padding: 20px;
-}
-
-
-.mat-tab-group {
-    height: 600px;
 }
