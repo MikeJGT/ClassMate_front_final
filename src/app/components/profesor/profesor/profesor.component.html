@@ -1,31 +1,5 @@
 <div class="container">
     <div class="wrapper">
-
-        <mat-tab-group>
-            <mat-tab label="Asignaturas">
-                <div class="clases">
-                    <app-listar-clases></app-listar-clases>
-                    <button [routerLink]="['/profesor/crear']">Crear Asignatura</button>
-                </div>
-            </mat-tab>
-            <mat-tab label="Perfil">
-                <div class="perfil">
-                    <app-perfil></app-perfil>
-                </div>
-            </mat-tab>
-            <mat-tab label="Horario">
-                <div class="horario">
-                    <app-tabla class="horario"></app-tabla>
-                </div>
-            </mat-tab>
-            <mat-tab label="Mensajeria">
-                <div class="mensajeria">mensajeria
-                    <app-conversacion class="mensajes"></app-conversacion>
-                    <button>mensaje</button>
-                </div>
-            </mat-tab>
-        </mat-tab-group>
-        <!-- 
         <div class="clases">
             <app-listar-clases></app-listar-clases>
             <button [routerLink]="['/profesor/crear']">Crear Asignatura</button>
@@ -39,6 +13,6 @@
         <div class="mensajeria">mensajeria
             <app-conversacion class="mensajes"></app-conversacion>
             <button>mensaje</button>
-        </div> -->
+        </div>
     </div>
 </div>
