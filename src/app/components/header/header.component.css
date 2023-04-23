@@ -32,7 +32,7 @@ li {
 }
 
 .logo {
-    width: 125px;
+    width: 150px;
     height: 100px;
 }
 
@@ -52,8 +52,7 @@ li {
     justify-content: space-between;
     border: 1px solid #c1d23e;
     border-radius: 5px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin: 20px;
     font-size: 1.5em;
     font-family: 'Caveat', cursive;
 }
@@ -72,13 +71,6 @@ li {
     align-items: center;
 }
 
-.navegador {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
 .botones {
     display: flex;
     justify-content: space-between;
@@ -86,7 +78,6 @@ li {
 }
 
 .btn {
-    height: 75%;
     font-family: 'Caveat', cursive;
     border-color: #c1d23e;
     transition: 0.5s;
@@ -95,4 +86,11 @@ li {
 
 .btn:hover {
     background-color: #c1d23e;
+}
+
+.navegador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
