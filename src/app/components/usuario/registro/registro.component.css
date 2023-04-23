@@ -2,6 +2,10 @@
     color: #c1d23e;
 }
 
+h4 {
+    font-family: 'Caveat', cursive;
+}
+
 .formulario {
     max-width: 500px;
     margin: 0 auto;
@@ -9,7 +13,7 @@
     border-radius: 15px;
     margin-top: 40px;
     margin-bottom: 40px;
-    background-color: #24303c;
+    background-color: #2a3d6b;
     color: white;
 }
 
@@ -27,13 +31,13 @@ form {
 }
 
 .form-control {
-    background-color: #24303c;
+    background-color: #2a3d6b;
     border: 1px solid #1f53c5;
     color: white;
 }
 
 .form-select {
-    background-color: #24303c;
+    background-color: #2a3d6b;
     border: 1px solid #1f53c5;
     color: white;
 }
@@ -46,14 +50,13 @@ form {
     position: absolute;
     top: 8px;
     right: 8px;
-    background-color: #24303c;
+    background-color: #2a3d6b;
     border: 1px solid #1f53c5;
 }
 
 .btn {
-    background-color: #c1d23e;
     border: 1px solid #c1d23e;
-    color: white;
+    color: #c1d23e;
     width: 200px;
 }
 

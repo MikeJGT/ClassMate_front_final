@@ -46,6 +46,7 @@ export class RegistroComponent {
 
   onSubmit() {
     console.log(this.formularioRegister.value)
+    this.formularioRegister.reset();
   }
   cambiarTipoPassword() {
     this.tipoPassword = this.tipoPassword === 'text' ? 'password' : 'text';
