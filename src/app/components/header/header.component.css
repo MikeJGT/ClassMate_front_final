@@ -1,24 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Handlee&display=swap');
+
+
+:root {
+    --azul: #2a3d6b;
+    --clarito: #dfeaf1;
+    --verde: #c1d23e;
+}
+
+
 ul {
     list-style: none;
     display: flex;
 
 }
 
+a {
+    display: block;
+    text-decoration: none;
+    color: #c1d23e;
+}
+
 img {
     display: block;
     width: 100%;
     height: auto;
-    overflow: hidden;
 }
 
 li {
     cursor: pointer;
+    color: #c1d23e
 }
 
 .logo {
     width: 150px;
     height: 150px;
 }
+
 
 .perfil {
     width: 70px;
@@ -35,6 +52,9 @@ li {
     justify-content: space-between;
     border: 1px solid #c1d23e;
     border-radius: 5px;
+    margin-left: 20px;
+    font-size: 1.5em;
+    font-family: 'Caveat', cursive;
 }
 
 .cardUser>div {
@@ -42,4 +62,36 @@ li {
     display: flex;
     align-items: center;
     color: #c1d23e;
+}
+
+.listaWrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navegador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.botones {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    height: 50%;
+    font-family: 'Caveat', cursive;
+    border-color: #c1d23e;
+    transition: 0.5s;
+    margin-left: 20px;
+}
+
+.btn:hover {
+    background-color: #c1d23e;
 }

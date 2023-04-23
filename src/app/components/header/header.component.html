@@ -1,62 +1,56 @@
-<div>
+<div class="container">
+    <nav class="navegador">
+        <!-- <div class="listaWrap"> -->
+        <a href="#">
+            <img class="logo" src="../../../assets/images/logo.png">
+        </a>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/logo.png"></a>
 
-
-            <!-- <button class="navbar-toggler" type="button" data-bs-target="#navbarSupportedContent"
+        <!-- <button class="navbar-toggler" type="button" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="navigation">
             </button> -->
+        <div class="botones">
+            <button class="btn" aria-current="page" [routerLink]="['/']"
+                *ngIf="!userService.isLogged() && router.url === '/login'">
+                Home
+            </button>
 
-            <div class="cardUser" *ngIf="userService.isLogged()">
-                <figure class="perfil">
-                    <img *ngIf="userService.isTutor() && male" src="../../../assets/images/tutor.jpg">
-                    <img *ngIf="userService.isTutor() && !male" src="../../../assets/images/tutorA.jpg">
-                    <img *ngIf="userService.isAlumno() && male" src="../../../assets/images/alumnO.jpg">
-                    <img *ngIf="userService.isAlumno() && !male" src="../../../assets/images/alumnA.jpg">
-                    <img *ngIf="userService.isProfesor() && male" src="../../../assets/images/profesor.jpg">
-                    <img *ngIf="userService.isProfesor() && !male" src="../../../assets/images/profesora.jpg">
-                </figure>
-                <div>
-                    {{name}}
-                </div>
-            </div>
+            <button class="btn" [routerLink]="['/alumno']" *ngIf="userService.isLogged() && userService.isAlumno()">
+                Inicio
+            </button>
 
-            <div id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/alumno']"
-                            *ngIf="userService.isLogged() && userService.isAlumno()">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/tutor']"
-                            *ngIf="userService.isLogged() && userService.isTutor()">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/profesor']"
-                            *ngIf="userService.isLogged() && userService.isProfesor()">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/login']" *ngIf="!userService.isLogged()">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" [routerLink]="['/registro']"
-                            *ngIf="userService.isLogged() && userService.isProfesor()">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" (click)="onLogOut()" *ngIf="userService.isLogged()">LogOut</a>
-                    </li>
+            <button class="btn" [routerLink]="['/tutor']" *ngIf="userService.isLogged() && userService.isTutor()">
+                Inicio
+            </button>
+            <button class="btn" [routerLink]="['/profesor']" *ngIf="userService.isLogged() && userService.isProfesor()">
+                Inicio
+            </button>
 
-                </ul>
-            </div>
+            <button class="btn" [routerLink]="['/login']"
+                *ngIf="!userService.isLogged() && router.url === '/'">Login</button>
 
+            <button class="btn" [routerLink]="['/registro']"
+                *ngIf="userService.isLogged() && userService.isProfesor()">Register</button>
 
+            <button class="btn" (click)="onLogOut()" *ngIf="userService.isLogged()">LogOut</button>
         </div>
-    </nav>
 
+        <div class="cardUser" *ngIf="userService.isLogged()">
+            <figure class="perfil">
+                <img *ngIf="userService.isTutor() && male" src="../../../assets/images/tutor.jpg">
+                <img *ngIf="userService.isTutor() && !male" src="../../../assets/images/tutorA.jpg">
+                <img *ngIf="userService.isAlumno() && male" src="../../../assets/images/alumnO.jpg">
+                <img *ngIf="userService.isAlumno() && !male" src="../../../assets/images/alumnA.jpg">
+                <img *ngIf="userService.isProfesor() && male" src="../../../assets/images/profesor.jpg">
+                <img *ngIf="userService.isProfesor() && !male" src="../../../assets/images/profesora.jpg">
+            </figure>
+            <div>
+                {{name}}
+            </div>
+        </div>
+
+
+        <!-- </div> -->
+    </nav>
 
 </div>
