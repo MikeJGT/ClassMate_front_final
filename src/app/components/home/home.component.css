@@ -1,0 +1,43 @@
+.pagina {
+    box-sizing: inherit;
+}
+
+.general {
+    display: flex;
+    overflow: hidden;
+}
+
+.parte1 {
+    position: relative;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.texto1 {
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    max-width: none;
+    background: #fff;
+    margin-bottom: 20px;
+}
+
+.texto1 h1 {
+    color: #c1d23e;
+    font-size: 2em;
+}
+
+.texto1 p {
+    font-size: 1.25em;
+    line-height: 1.5;
+    padding-top: 30px;
+}
+
+.gratis {
+    display: inline-block;
+    position: relative;
+}
