@@ -1,5 +1,5 @@
 <div>
-    <!-- Navbar OPCION B -->
+
     <nav class="navbar navbar-expand-lg bg-body-tertiary ">
         <div class="container">
             <a class="navbar-brand" href="#"><img class="logo" src="../../../assets/images/logo.png"></a>
@@ -30,22 +30,22 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/alumno']"
-                            *ngIf="userService.isLogged() && !userService.isAlumno()">Inicio</a>
+                            *ngIf="userService.isLogged() && userService.isAlumno()">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/tutor']"
-                            *ngIf="userService.isLogged() && !userService.isTutor()">Inicio</a>
+                            *ngIf="userService.isLogged() && userService.isTutor()">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/profesor']"
-                            *ngIf="userService.isLogged() && !userService.isProfesor()">Inicio</a>
+                            *ngIf="userService.isLogged() && userService.isProfesor()">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/login']" *ngIf="!userService.isLogged()">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [routerLink]="['/registro']"
-                            *ngIf="userService.isLogged() && !userService.isAlumno() && !userService.isTutor()">Register</a>
+                            *ngIf="userService.isLogged() && userService.isProfesor()">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="onLogOut()" *ngIf="userService.isLogged()">LogOut</a>
