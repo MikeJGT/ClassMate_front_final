@@ -6,6 +6,7 @@
     box-sizing: border-box;
 }
 
+/* 
 ul {
 
     font-family: 'Handlee', cursive;
@@ -14,17 +15,20 @@ ul {
     background-color: #2a3d6b;
     width: 100%;
 }
-
+ */
 li {
     padding: 0.75em;
     list-style: none;
     cursor: pointer;
 
-
 }
 
 li:hover {
-    border-radius: 0.5em;
+    border-radius: 1em;
     background-color: #c1d23e;
 
 }
+
+/* .lista {
+    overflow: hidden;
+} */

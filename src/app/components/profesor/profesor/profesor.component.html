@@ -2,13 +2,16 @@
     <div class="wrapper">
         <div class="clases">
             <app-listar-clases></app-listar-clases>
-            <button [routerLink]="['/profesor/crear']">Crear Asignatura</button>
+            <div class="boton">
+                <input type="submit" value="Crear Asignatura" class="btn btn-info" [routerLink]="['/profesor/crear']">
+            </div>
+
         </div>
         <div class="perfil">
             <app-perfil></app-perfil>
         </div>
         <div class="horario">
-            <app-tabla class="horario"></app-tabla>
+            <app-tabla class="horarioTabla"></app-tabla>
         </div>
         <div class="mensajeria">mensajeria
             <app-conversacion class="mensajes"></app-conversacion>
