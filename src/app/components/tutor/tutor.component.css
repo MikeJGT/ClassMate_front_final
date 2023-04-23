@@ -29,21 +29,38 @@
     grid-column: 2/ 3;
     grid-row: 3 / 3;
     border: 1px solid black;
+    background-color: #dfeaf1;
+}
+
+.alumnos h2 {
+    margin: 1em;
 }
 
 .alumno {
     border: 1px solid black;
+    padding: 1.2em;
+    background-image: url(../../../assets/images/cuadro3.png);
+    background-position: cover;
+    background-blend-mode: multiply;
+    background-color: #ffffff;
+
+    border-radius: 25px;
+    margin-bottom: 1em;
 }
+
 
 .observaciones {
     grid-column: 3/4;
     grid-row: 3 / 4;
     border: 1px solid black;
-    padding: 20px;
+
 }
 
 .observacion {
     border-radius: 25px;
-    border: 1px solid salmon;
-    padding: 10px;
+    background-color: #dfeaf1;
+    background-position: center;
+    border: 1px solid black;
+    padding: 16px;
+
 }
