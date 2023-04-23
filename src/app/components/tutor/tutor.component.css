@@ -10,6 +10,13 @@
     grid-row: 1 / 4;
     border: 1px solid black;
     height: auto;
+    background-image: url(../../../assets/images/sobre.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-blend-mode: multiply;
+    background-color: #dfeaf1;
+    color: black;
 }
 
 .perfil {
