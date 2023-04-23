@@ -21,8 +21,8 @@ export class HeaderComponent {
   }
 
   async ngOnInit() {
-    const obj = this.utilService.getToken()
     this.male = await this.isMale()
+    const obj = this.utilService.getToken()
     const [user] = await this.userService.getUserById(obj.user_id)
     this.name = user.nombre;
   }
