@@ -7,11 +7,11 @@
                 <p>{{tarea.contenido}}</p>
                 <p>Fecha Entrega: {{tarea.fecha_entrega}}</p>
                 <div class="boton">
-                    <button class="btn btn-info" [routerLink]="['/profesor/tarea','edit', tarea.id]">Editar</button>
-                    <button class="btn btn-info" (click)="deleteTask(tarea.id)"
-                        style="margin-left: 10px;">Delete</button>
+                    <button class="btn btn-info" [routerLink]="['/profesor/tarea','edit', tarea.id]"
+                        *ngIf="!alumnoService.isAlumno()">Editar</button>
+                    <button class="btn btn-info" (click)="deleteTask(tarea.id)" style="margin-left: 10px;"
+                        *ngIf="!alumnoService.isAlumno()">Delete</button>
                 </div>
             </div>
         </div>
     </div>
-</div>

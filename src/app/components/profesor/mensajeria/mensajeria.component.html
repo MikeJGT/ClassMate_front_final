@@ -13,10 +13,12 @@
 
 
     </form>
-    <div *ngFor="let mensaje of arrMensajes">
-        <p>Emisor:{{mensaje.emisor}}</p>
-        <p>Receptor:{{mensaje.receptor}}</p>
-        <p>Contenido: {{mensaje.contenido}}</p>
-        <p>Fecha: {{mensaje.fecha}}</p>
+    <div class="mensajes">
+        <div *ngFor="let mensaje of arrMensajes">
+            <p>To: {{mensaje.receptor}}</p>
+            <p>{{mensaje.contenido}}</p>
+            <p>{{mensaje.fecha}}</p>
+        </div>
     </div>
+
 </div>
