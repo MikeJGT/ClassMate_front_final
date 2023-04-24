@@ -6,7 +6,8 @@
         <p>{{tarea.contenido}}</p>
         <p>Asignatura:{{tarea.asignatura}}</p>
         <p>Fecha Entrega: {{tarea.fecha_entrega}}</p>
-        <button [routerLink]="['/profesor/tarea','edit', tarea.id]">🖊️Editar</button>
-        <button (click)="deleteTask(tarea.id)" style="margin-left: 10px;">🪠Delete</button>
+        <button [routerLink]="['/profesor/tarea','edit', tarea.id]" *ngIf="!alumnoService.isAlumno()">🖊️Editar</button>
+        <button (click)="deleteTask(tarea.id)" style="margin-left: 10px;"
+            *ngIf="!alumnoService.isAlumno()">🪠Delete</button>
     </div>
 </div>

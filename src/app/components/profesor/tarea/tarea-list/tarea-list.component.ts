@@ -3,7 +3,8 @@ import { Component, Input, } from '@angular/core';
 import { ProfesorService } from 'src/app/services/profesor.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { TareaService } from 'src/app/services/tarea.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-tarea-list',
@@ -17,7 +18,8 @@ export class TareaListComponent {
     private profesorService: ProfesorService,
     private utisService: UtilsService,
     private tareaService: TareaService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    public alumnoService: UserService
   ) {
     this.tareas = [];
   }

@@ -1,4 +1,4 @@
-<div class="container">
+<!--<div class="container">
     <div class="wrapper">
         <div class="asignaturas">
             <ul>
@@ -14,6 +14,45 @@
         </div>
         <div class="tareas">tareas
             <app-tarea-list></app-tarea-list>
+        </div>
+    </div>
+</div>-->
+<div class="total">
+    <div class="container mb-2">
+
+        <div class="row g-2">
+            <div class="col-md-12 perfil">
+                <app-perfil></app-perfil>
+            </div>
+        </div>
+    </div>
+    <div class="container mb-2">
+        <div class="row g-2">
+            <div class="col-12 col-lg-6">
+                <div class="h-100 tareas">
+                    <div>
+                        <app-tarea-list></app-tarea-list>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 ">
+                <div class="horario h-100">
+                    <app-tabla class="horariotabla"></app-tabla>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-md-12 clases">
+                <div class="asignaturas">
+                    <ul>
+                        <li *ngFor="let asignatura of arrAsignaturas" [routerLink]="['/alumno/notas']">
+                            {{asignatura.nombre}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>

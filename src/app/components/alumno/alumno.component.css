@@ -1,4 +1,4 @@
-.wrapper {
+/*.wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -29,4 +29,35 @@
     grid-row: 3 / 4;
     border: 1px solid black;
     padding: 20px;
+}*/
+
+.total {
+    max-width: 1004px;
+    margin: 0 auto;
+}
+
+.horario {
+    border-radius: 1em;
+    background-color: #dfeaf1;
+    border: 2px solid #c1d23e;
+    cursor: pointer;
+}
+
+.horarioTabla {
+    margin-top: 20px;
+}
+
+
+.tareas {
+    padding: 20px;
+    background-color: #dfeaf1;
+    border: 2px solid #c1d23e;
+    border-radius: 1em;
+}
+
+.asignaturas {
+    padding: 20px;
+    background-color: #dfeaf1;
+    border: 2px solid #c1d23e;
+    border-radius: 1em;
 }

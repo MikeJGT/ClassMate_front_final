@@ -26,8 +26,8 @@
     padding: 1em;
 }
 
-.alumnos h2 {
-    margin: 1em;
+h2 {
+    margin: 0.5em;
 }
 
 .alumno {
@@ -56,11 +56,11 @@
 
 .observacion {
     border-radius: 25px;
-    background-image: url(../../../assets/images/cuadricula2.jpg);
+    background-image: url(../../../assets/images/observacionTransparente.png);
     background-blend-mode: multiply;
     background-position: center center;
     background-size: cover;
-    background-color: white;
+    background-color: #dfeaf1;
     border: 1px solid #c1d23e;
     padding: 16px;
     box-shadow: 2px 2px 4px #c1d23e;
