@@ -1,25 +1,3 @@
-<!-- <div class="container">
-    <div class="wrapper">
-        <div class="col-md-6 clases">
-            <app-listar-clases></app-listar-clases>
-            <div class="boton">
-                <input type="submit" value="Crear Asignatura" class="btn btn-info" [routerLink]="['/profesor/crear']">
-            </div>
-
-        </div>
-        <div class="col-md-6 perfil">
-            <app-perfil></app-perfil>
-        </div>
-        <div class="horario">
-            <app-tabla class="horarioTabla"></app-tabla>
-        </div>
-        <div class="mensajeria">mensajeria
-            <app-conversacion class="mensajes"></app-conversacion>
-
-        </div>
-    </div>
-</div> -->
-
 <div class="container">
     <div class="wrapper">
         <div class="row">
@@ -43,7 +21,8 @@
                         [routerLink]="['/profesor/crear']">
                 </div>
             </div>
-            <div class="col-md-8 horario">
+
+            <div class="col-md-8 horario" [routerLink]="['/horario/registro']">
                 <app-tabla class="horarioTabla"></app-tabla>
             </div>
 

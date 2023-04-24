@@ -52,6 +52,7 @@
 .horario {
     border-radius: 1em;
     background-color: #dfeaf1;
+    cursor: pointer;
 }
 
 .horarioTabla {
