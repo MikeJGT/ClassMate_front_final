@@ -1,18 +1,22 @@
-<form [formGroup]="formMensaje" (ngSubmit)="getDataMensaje()">
-    <div class="mb-3">
-        <label class="form-label">Contenido</label>
-        <textarea class="form-control" formControlName="contenido" cols="100" rows="2"></textarea>
+<div class="container">
+    <form [formGroup]="formMensaje" (ngSubmit)="getDataMensaje()">
+        <div class="mb-3">
+            <textarea class="form-control" formControlName="contenido" cols="100" rows="2"
+                placeholder="Introduce el mensaje"></textarea>
+            <select formControlName="receptor_id">
+                <option [value]="user.id" *ngFor="let user of arrUsers">{{user.nombre}}</option>
+            </select>
+            <div class="boton">
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+
+
+    </form>
+    <div *ngFor="let mensaje of arrMensajes">
+        <p>Emisor:{{mensaje.emisor}}</p>
+        <p>Receptor:{{mensaje.receptor}}</p>
+        <p>Contenido: {{mensaje.contenido}}</p>
+        <p>Fecha: {{mensaje.fecha}}</p>
     </div>
-    <div>
-        <select formControlName="receptor_id">
-            <option [value]="user.id" *ngFor="let user of arrUsers">{{user.nombre}}</option>
-        </select>
-    </div>
-    <input type="submit" value="Enviar">
-</form>
-<div *ngFor="let mensaje of arrMensajes">
-    <p>Emisor:{{mensaje.emisor}}</p>
-    <p>Receptor:{{mensaje.receptor}}</p>
-    <p>Contenido: {{mensaje.contenido}}</p>
-    <p>Contenido: {{mensaje.fecha}}</p>
 </div>

@@ -4,3 +4,11 @@
     margin-top: 20px;
     border: 2px solid #c1d23e;
 }
+
+.fecha {
+    overflow: hidden;
+}
+
+i {
+    color: darkcyan
+}

@@ -71,10 +71,10 @@ export class MensajeriaComponent {
       if (!response.fatal) {
         this.arrMensajes = response
       }
-      console.log('Mensajesssssss', this.arrMensajes);
+      // console.log('Mensajesssssss', this.arrMensajes);
 
     } catch (err) {
-      console.log('ERROR->ERRRRRRRRRRRRRRRRRRRRRR');
+      //  console.log('ERROR->ERRRRRRRRRRRRRRRRRRRRRR');
     }
   }
 
