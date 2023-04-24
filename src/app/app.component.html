@@ -1,2 +1,4 @@
 <header></header>
 <router-outlet></router-outlet>
+
+<app-footer *ngIf="router.url!=='/login' && router.url!=='/registro'"></app-footer>
