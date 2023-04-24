@@ -1,4 +1,4 @@
-.alumnos {
+/* .alumnos {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -8,7 +8,7 @@
     width: 250px;
     padding: 20px;
     border: 1px solid black;
-}
+} */
 
 .mat-column-select {
     overflow: initial;

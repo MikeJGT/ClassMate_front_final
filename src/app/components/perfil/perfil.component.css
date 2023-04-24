@@ -1,6 +1,6 @@
-.col-4 {
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.perfil {
+    border-radius: 1em;
+    background-color: #dfeaf1;
+    margin-top: 20px;
+    border: 2px solid #c1d23e;
 }

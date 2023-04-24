@@ -32,13 +32,13 @@ form {
 
 .form-control {
     background-color: #2a3d6b;
-    border: 1px solid #1f53c5;
+    border: 1px solid #c1d23e;
     color: white;
 }
 
 .form-select {
     background-color: #2a3d6b;
-    border: 1px solid #1f53c5;
+    border: 1px solid #c1d23e;
     color: white;
 }
 
@@ -51,12 +51,13 @@ form {
     top: 8px;
     right: 8px;
     background-color: #2a3d6b;
-    border: 1px solid #1f53c5;
+    border: 1px solid #2a3d6b;
 }
 
 .btn {
     border: 1px solid #c1d23e;
-    color: #c1d23e;
+    background-color: #c1d23e;
+    color: b;
     width: 200px;
 }
 

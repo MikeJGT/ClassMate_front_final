@@ -1,11 +1,13 @@
 <div>
     <div class="flex">
         <h2>Conversacion</h2>
-        <button type="button" class="btn btn-info" [routerLink]="['/profesor/conversacion/new']">Crear</button>
     </div>
     <ul>
         <li *ngFor="let conversacion of arrConversaciones" [routerLink]="['/profesor/mensajeria',conversacion.id]">
             Asunto:
             {{conversacion.asunto}}</li>
     </ul>
+    <div class="boton">
+        <button type="button" class="btn btn-info" [routerLink]="['/profesor/conversacion/new']">Crear</button>
+    </div>
 </div>
