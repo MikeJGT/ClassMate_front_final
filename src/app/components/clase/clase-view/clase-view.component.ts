@@ -42,6 +42,8 @@ export class ClaseViewComponent {
       this.arrAlumnos = resAll;
       console.log('ALL ALUMNOS', resAll);
 
+      localStorage.setItem('claseId', this.classId);
+
     })
     console.log(this.arrAlumnos);
 
@@ -61,5 +63,6 @@ export class ClaseViewComponent {
     //console.log(idAlumno)
     await this.alumnoSV.deleteAlumnoByID(idAlumno)
   }
+
 
 }

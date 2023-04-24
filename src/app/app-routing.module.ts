@@ -53,7 +53,6 @@ const routes: Routes = [
   { path: 'profesor/observacion/new/alumno/:id/:claseid', component: NewObservacionComponent },
   //Rutas de tarea
   { path: 'profesor/tarea', component: TareaListComponent },
-  { path: 'profesor/tarea/new', component: NewTareaComponent },
   { path: 'profesor/tarea/edit/:tareaid', component: EditTareaComponent },
   // Rutas de alumno
   {
