@@ -1,0 +1,59 @@
+.btn {
+    background-color: #c1d23e;
+    border: 1px solid #c1d23e;
+    color: black;
+    width: 160px;
+}
+
+.boton {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 20px;
+    /* padding-left: 20px; */
+}
+
+.botonSelect {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+    /* padding-left: 20px; */
+}
+
+.listaAlumnos {
+    background-color: #dfeaf1;
+    border-radius: 1em;
+    border: 2px solid #c1d23e;
+    padding-top: 10px;
+    font-size: 22px;
+    line-height: 1.5em;
+
+
+}
+
+.lista {
+    list-style: none;
+}
+
+.lista i {
+    color: tomato;
+    cursor: pointer;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 20px;
+
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+}
+
+#datos {
+    color: #2a3d6b;
+}
+
+#newAlumno {
+    color: goldenrod;
+}
