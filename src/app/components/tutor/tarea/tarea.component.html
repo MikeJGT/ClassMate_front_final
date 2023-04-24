@@ -1,18 +1,17 @@
 <div class="container">
     <h2>Tarea</h2>
     <div class="d-flex flex-wrap gap-3" style="max-width: 1000px;">
-        <article class="card text-dark bg-light mb-3areas" style="max-width: 25rem;" *ngFor="let tarea of arrTareas"
-            id="tarea">
+        <article class="card text-dark mb-3areas" style="max-width: 25rem;" *ngFor="let tarea of arrTareas" id="tarea">
             <div class="card-header"> {{tarea.clase}}</div>
             <div class="card-body">
                 <h5 class="card-title"> {{tarea.titulo}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Entrega: {{tarea.fecha_entrega}}</h6>
-                <p class="card-text">Asignatura: {{tarea.asignatura}}</p>
-                <p class="card-text">Contenido: {{tarea.contenido}}</p>
+                <p class="card-text">Asignatura: <span>{{tarea.asignatura}}</span></p>
+                <p class="card-text">Contenido: <span>{{tarea.contenido}}</span></p>
+                <h6 class="card-subtitle mb-2 text-muted">Entrega: {{tarea.fecha_entrega | date:'medium' }}</h6>
             </div>
-
         </article>
     </div>
-
-    <app-notas-view [alumnoId]="alumnoId" [claseID]="classID"></app-notas-view>
+    <div class="notas">
+        <app-notas-view [alumnoId]="alumnoId" [claseID]="classID"></app-notas-view>
+    </div>
 </div>

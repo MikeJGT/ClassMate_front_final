@@ -1,13 +1,21 @@
-<p>new-observacion works!</p>
-<form [formGroup]="formObservacion" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Titulo</label>
-        <input type="text" class="form-control" formControlName="titulo">
+<div class="container position-relative">
+    <div class="formulario">
+        <h4>Observación</h4>
+        <form [formGroup]="formObservacion" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" formControlName="titulo">
+            </div>
+            <div>
+                <label class="form-label">Contenido</label>
+                <textarea class="form-control" cols="30" rows="10" formControlName="contenido"></textarea>
+            </div>
+            <div class="boton">
+                <input type="submit" value="Crear" class="btn btn-info">
+            </div>
+        </form>
     </div>
-    <div>
-        <label class="form-label">Contenido</label>
-        <textarea class="form-control" cols="30" rows="10" formControlName="contenido"></textarea>
+    <div class="nube">
+        <img src="../../../../assets/images/nube.png" class="img-fluid">
     </div>
-
-    <input type="submit" value="Crear">
-</form>
+</div>

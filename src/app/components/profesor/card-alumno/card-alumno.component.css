@@ -1,0 +1,55 @@
+.perfil {
+    border-radius: 1em;
+    background-color: #dfeaf1;
+    margin-top: 20px;
+    border: 2px solid #c1d23e;
+    font-size: 1.25em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #c1d23e;
+    border: 1px solid #c1d23e;
+    color: black;
+    width: 160px;
+    margin-left: 30px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: space-around;
+}
+
+.perfil span {
+    padding-left: 15px;
+}
+
+
+table {
+    border: none;
+}
+
+.tabla {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3em;
+}
+
+table th {
+    background-color: #246355;
+    border-bottom: 4px solid black;
+    color: white;
+}
+
+table tr:nth-child(even) td {
+    background-color: #ddd;
+}
+
+table tr:nth-child(even) td:hover {
+    background-color: #c1d23e;
+}
+
+tr:hover td {
+    background-color: #c1d23e;
+    color: white;
+}

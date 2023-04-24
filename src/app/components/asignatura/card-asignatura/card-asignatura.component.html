@@ -1,6 +1,19 @@
-<div class="container">
+<div class="total">
+    <div class="container mb-2">
+        <h1>{{asignatura}}</h1>
+        <div class="row g-2">
+            <div class="col-12 col-lg-6">
+                <div class="tareas h-100">
+                    <app-tarea-list [asignaturaId]="idAsignatura"></app-tarea-list>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="newTarea h-100">
+                    <app-new-tarea (formulario)="getNombre($event)"></app-new-tarea>
+                </div>
+            </div>
 
-    <h1>{{asignatura}}</h1>
-    <app-tarea-list [asignaturaId]="idAsignatura"></app-tarea-list>
-    <app-new-tarea (formulario)="getNombre($event)"></app-new-tarea>
+        </div>
+    </div>
+
 </div>

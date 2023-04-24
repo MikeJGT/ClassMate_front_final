@@ -1,18 +1,26 @@
-<h2>Edición de Usuario</h2>
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Titulo</label>
-        <input type="text" class="form-control" formControlName="titulo" name="titulo">
+<div class="container position-relative">
+    <div class="formulario">
+        <h2>EDITAR TAREA</h2>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" formControlName="titulo" name="titulo">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Contenido</label>
+                <textarea class="form-control" cols="30" rows="10" formControlName="contenido"
+                    name="contenido"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha Entrega</label>
+                <input type="datetime-local" class="form-control" formControlName="fecha_entrega">
+            </div>
+            <div class="boton">
+                <input type="submit" class="btn btn-info" value="Modificar">
+            </div>
+        </form>
     </div>
-    <div class="mb-3">
-        <label class="form-label">Contenido</label>
-        <textarea class="form-control" cols="30" rows="10" formControlName="contenido" name="contenido"></textarea>
+    <div class="nube">
+        <img src="../../../../assets/images/nube.png" class="img-fluid">
     </div>
-    <div class="mb-3">
-        <label class="form-label">Fecha Entrega</label>
-        <input type="datetime-local" class="form-control" formControlName="fecha_entrega">
-    </div>
-    <div>
-        <input type="submit" class="bt btn-info" value="Modificar">
-    </div>
-</form>
+</div>

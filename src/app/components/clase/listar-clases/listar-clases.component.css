@@ -43,7 +43,7 @@ ul {
 .boton {
     display: flex;
     justify-content: left;
-    padding: 20px;
+    padding: 40px;
 }
 
 li {

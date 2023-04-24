@@ -40,7 +40,7 @@ footer ul {
 
 footer h5 {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 20px;
     margin: 2em 0;
     color: #c1d23e;
 }
@@ -50,6 +50,7 @@ footer li {
     margin: 1em 0;
     transition: 0.2s;
     color: white;
+    font-size: 18px;
 }
 
 footer li:hover {
@@ -60,6 +61,7 @@ footer li:hover {
 
 footer p {
     color: white;
+    font-size: 18px;
 }
 
 .bottom-footer {

@@ -1,0 +1,20 @@
+.notas {
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+}
+
+article {
+    background-color: #dfeaf1;
+    border: 2px solid #c1d23e;
+
+}
+
+span {
+    padding-left: 15px;
+}

@@ -1,14 +1,15 @@
 form div {
     display: flex;
-    gap: 10px;
+    gap: 30px;
     justify-content: stretch;
+    margin-top: 30px;
 }
 
 select {
     padding: 10px;
     width: 100px;
     background-color: whitesmoke;
-    border-radius: 100px;
+    border-radius: 1em;
 }
 
 form textarea {
@@ -16,6 +17,7 @@ form textarea {
     border: 2px solid #c1d23e;
     background-color: #dfeaf1;
     border-radius: 1em;
+    font-size: 1.30em;
 }
 
 button {
@@ -34,9 +36,24 @@ button i {
     background-color: #dfeaf1;
     margin: 1em;
     padding: 1em;
+    font-size: 1.5em;
 }
 
 .mensajes div p:last-child {
     color: rgb(155, 146, 146);
     text-align: right;
+}
+
+.mensajes .nombre {
+    text-decoration: underline;
+    font-size: 1.25em;
+    line-height: 2;
+}
+
+.mensajes div:last-child {
+    margin-bottom: 100px;
+}
+
+.mensajes div:first-child {
+    margin-top: 40px;
 }

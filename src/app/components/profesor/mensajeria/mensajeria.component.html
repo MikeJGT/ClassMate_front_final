@@ -10,14 +10,12 @@
                 <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
         </div>
-
-
     </form>
     <div class="mensajes">
         <div *ngFor="let mensaje of arrMensajes">
-            <p>To: {{mensaje.receptor}}</p>
+            <p class="nombre">{{mensaje.receptor}}</p>
             <p>{{mensaje.contenido}}</p>
-            <p>{{mensaje.fecha}}</p>
+            <p>{{mensaje.fecha | date:'medium'}}</p>
         </div>
     </div>
 
