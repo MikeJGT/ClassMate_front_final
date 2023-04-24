@@ -1,4 +1,4 @@
 <header></header>
 <router-outlet></router-outlet>
 
-<app-footer *ngIf="router.url!=='/login' && router.url!=='/registro'"></app-footer>
+<app-footer *ngIf="router.url==='/profesor' || router.url==='/tutor' || router.url==='/alumno'"></app-footer>
