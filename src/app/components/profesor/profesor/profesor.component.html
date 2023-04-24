@@ -20,35 +20,35 @@
     </div>
 </div> -->
 
-<div class="container">
-    <div class="wrapper">
-        <div class="row">
-            <div class="col-md-11 perfil">
+<div class="total">
+    <div class="container mb-2">
+
+        <div class="row g-2">
+            <div class="col-md-12 perfil">
                 <app-perfil></app-perfil>
             </div>
-
-
         </div>
-        <div class="row">
-            <div class="col-md-11 mensajeria">
-                <p>mensajeria</p>
-                <app-conversacion class="mensajes"></app-conversacion>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 clases">
-                <app-listar-clases></app-listar-clases>
-                <div class="boton">
-                    <input type="submit" value="Crear Asignatura" class="btn btn-info"
-                        [routerLink]="['/profesor/crear']">
+    </div>
+    <div class="container mb-2">
+        <div class="row g-2">
+            <div class="col-12 col-lg-6">
+                <div class="mensajeria">
+                    <p>mensajeria</p>
+                    <app-conversacion class="mensajes"></app-conversacion>
                 </div>
             </div>
-            <div class="col-md-8 horario">
-                <app-tabla class="horarioTabla"></app-tabla>
+            <div class="col-12 col-lg-6 ">
+                <div class="horario h-100">
+                    <app-tabla class="horarioTabla"></app-tabla>
+                </div>
             </div>
-
-
         </div>
-
+    </div>
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-md-12 clases">
+                <app-listar-clases></app-listar-clases>
+            </div>
+        </div>
     </div>
 </div>

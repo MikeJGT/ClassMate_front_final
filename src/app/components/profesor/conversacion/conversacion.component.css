@@ -1,8 +1,8 @@
-* {
+/* * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+} */
 
 div {
     font-size: 1em;
@@ -21,14 +21,18 @@ div {
     margin: calc(1em - 10px);
 }
 
-.flex button {
-    margin: 1em;
-    padding: 4px;
+.btn {
     background-color: #c1d23e;
-    border-color: #c1d23e;
+    border: 1px solid #c1d23e;
+    color: black;
+    width: 150px;
 }
 
-
+.boton {
+    display: flex;
+    justify-content: left;
+    padding: 20px;
+}
 
 
 li {
@@ -40,5 +44,6 @@ li {
 li:hover {
     background-color: #c1d23e;
     border-radius: 0.25em;
+    width: fit-content;
 
 }
