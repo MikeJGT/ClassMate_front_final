@@ -1,36 +1,56 @@
-<p>tutor works!</p>
+<div class="total">
+    <div class="container mb-2">
 
+        <div class="row g-2">
+            <div class="col-md-12 perfil">
+                <app-perfil></app-perfil>
+            </div>
+        </div>
+    </div>
 
-<div class="container">
-    <div class="wrapper">
-        <div class="mensajeria">
-            <app-conversacion></app-conversacion>
-        </div>
-        <div class="perfil">
-            <app-perfil></app-perfil>
-        </div>
-        <div class="alumnos">
-            <h2>Alumnos</h2>
-            <div class="card-alumnos">
-                <div class="alumno" *ngFor="let alumno of arrAlumnos"
-                    [routerLink]="['/tutor/alumno/clase',alumno.id, alumno.clases_id]">
-                    <h3>{{alumno.nombre}}{{alumno.apellidos}}</h3>
-                    <p>Email: {{alumno.email}}</p>
-                    <p>Direccion: {{alumno.direccion}}</p>
-                    <p>Nacimiento: {{alumno.nacimiento}}</p>
-                    <p>ClaseID: {{alumno.clases_id}}</p>
-                    <p>Clase: {{alumno.clase}}</p>
+    <div class="container mb-2">
+        <div class="row g-2">
+            <div class="col-12 col-lg-6">
+                <div class="mensajeria h-100">
+                    <app-conversacion></app-conversacion>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 ">
+                <div class="alumnos h-100">
+
+                    <h2>Alumnos</h2>
+                    <div class="card-alumnos">
+                        <div class="alumno" *ngFor="let alumno of arrAlumnos"
+                            [routerLink]="['/tutor/alumno/clase',alumno.id, alumno.clases_id]">
+                            <h3>{{alumno.nombre}} {{alumno.apellidos}}</h3>
+                            <p>Email: {{alumno.email}}</p>
+                            <p>Direccion: {{alumno.direccion}}</p>
+                            <p>Nacimiento: {{alumno.nacimiento}}</p>
+                            <p>Clase: {{alumno.clase}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="observaciones">
-            <h2>Observacion</h2>
-            <article class="observacion" *ngFor="let observacion of arrObservacion">
-                <h3>{{observacion.titulo}}</h3>
-                <p>{{observacion.contenido}}</p>
-                <small>For: {{observacion.nombre}}</small>
-            </article>
+    </div>
+    <div class="container">
+        <div class="row g-2">
+            <div class="col-md-12 clases">
+                <div class="observaciones">
+                    <h2>Observacion</h2>
+                    <div class="flex">
+                        <article class="observacion" *ngFor="let observacion of arrObservacion">
+                            <h3>{{observacion.titulo}}</h3>
+                            <p>{{observacion.contenido}}</p>
+                            <small>About: {{observacion.nombre}}</small>
+                        </article>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
+
 </div>
