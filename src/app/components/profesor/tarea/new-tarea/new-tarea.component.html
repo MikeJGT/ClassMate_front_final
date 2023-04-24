@@ -2,20 +2,6 @@
 
 <form [formGroup]="formularioTarea" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-        <label class="form-label">ID Asignatura</label>
-        <input type="number" class="form-control" formControlName="asignaturas_id">
-
-        <p class="error" *ngIf="checkError('asignaturas_id', 'required')">
-            El campo id asignatura es requerido</p>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">ID Clases</label>
-        <input type="number" class="form-control" formControlName="clases_id">
-
-        <p class="error" *ngIf="checkError('clases_id', 'required')">
-            El campo id clase es requerido</p>
-    </div>
-    <div class="mb-3">
         <label class="form-label">Titulo</label>
         <input type="text" class="form-control" formControlName="titulo">
 

@@ -39,8 +39,16 @@ export class NewTareaComponent {
       )
   }
 
+  // ngOnInit() {
+  //   console.log('ASIGNACION TAREA ID funciona?', localStorage.getItem('asignaturaId'));
+  //   console.log('ASIGNACION TAREA ID funciona 22 :>', localStorage.getItem('claseId'));
+
+  // }
+
   async onSubmit() {
-    console.log(this.formularioTarea.value)
+    this.formularioTarea.value.asignaturas_id = localStorage.getItem('asignaturaId');
+    this.formularioTarea.value.clases_id = localStorage.getItem('claseId');
+    console.log('FORMULARIO CON IDS', this.formularioTarea.value)
     const response = await this.profesorService.createTarea(this.formularioTarea.value)
     console.log(response)
     this.actRoute.params.subscribe(async (params: any) => {

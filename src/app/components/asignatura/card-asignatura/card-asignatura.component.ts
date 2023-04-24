@@ -20,7 +20,8 @@ export class CardAsignaturaComponent {
       console.log(params)
       const id = params['id'];
       this.asignatura = params['nombre'];
-      console.log('ASIGNATURA EMITIDA', this.asignatura)
+      console.log('ASIGNATURA EMITIDA', this.asignatura);
+      localStorage.setItem('asignaturaId', id);
       //lista de tareas para una asignatura
       //reutilizamos tarea-list-component   
 
