@@ -18,6 +18,13 @@ ul {
  */
 
 .clases {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.cursos {
     height: auto;
     border-radius: 1em;
     background-color: #dfeaf1;

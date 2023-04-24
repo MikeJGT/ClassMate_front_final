@@ -1,7 +1,11 @@
-<div class="clases">
+<div class="cursos">
     <div class="lista">
         <ul>
-            <li *ngFor="let clase of arrClases" [routerLink]="['/profesor/clase', clase.clase_id]">{{clase.nombre}}</li>
+            <div class="clases">
+                <li *ngFor="let clase of arrClases" [routerLink]="['/profesor/clase', clase.clase_id]">{{clase.nombre}}
+                </li>
+            </div>
+
         </ul>
         <div class="boton">
             <input type="submit" value="Crear Asignatura" class="btn btn-info" [routerLink]="['/profesor/crear']">
