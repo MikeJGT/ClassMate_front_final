@@ -1,6 +1,7 @@
 <div class="container">
     <div class="wrapper">
         <div class="asignaturas">
+            <h2>Asignaturas</h2>
             <ul>
                 <li *ngFor="let asignatura of arrAsignaturas" [routerLink]="['/alumno/notas']">{{asignatura.nombre}}
                 </li>

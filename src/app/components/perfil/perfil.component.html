@@ -12,7 +12,8 @@
             </div>
             <div class="col-4 col-sm-4">
                 <p><i class="fa-solid fa-venus-mars"></i> {{perfil.genero}}</p>
-                <p class="fecha"><i class="fa-solid fa-cake-candles"></i> {{perfil.nacimiento}}</p>
+                <p class="fecha"><i class="fa-solid fa-cake-candles"></i> {{ perfil.nacimiento | date:'medium' }}
+                </p>
             </div>
         </div>
     </div>
