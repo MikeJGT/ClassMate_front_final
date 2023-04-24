@@ -1,8 +1,16 @@
-<p>new-conversacion works!</p>
-<form [formGroup]="formConversacion" (ngSubmit)="onSubmit()">
-    <div class="mb-3">
-        <label class="form-label">Asunto</label>
-        <input type="text" class="form-control" formControlName="asunto">
+<div class="formulario">
+    <div class="container">
+        <form [formGroup]="formConversacion" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label class="form-label">Asunto</label>
+                <input type="text" class="form-control" formControlName="asunto">
+            </div>
+            <div class="boton">
+                <button class="btn btn-info">Registrar</button>
+            </div>
+        </form>
     </div>
-    <input type="submit" value="Registrar">
-</form>
+    <div class="nube">
+        <img src="../../../../assets/images/nube.png" class="img-fluid">
+    </div>
+</div>

@@ -1,0 +1,27 @@
+.tarea {
+    height: auto;
+    border-radius: 1em;
+    background-color: #dfeaf1;
+    background-size: 270%;
+    /* margin-bottom: 50px; */
+    border: 2px solid #c1d23e;
+    font-size: 22px;
+    padding-left: 30px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #c1d23e;
+    border: 1px solid #c1d23e;
+    color: black;
+    width: 150px;
+}
+
+.boton {
+    display: flex;
+    justify-content: right;
+    padding: 20px;
+
+
+}
