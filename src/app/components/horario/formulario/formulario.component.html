@@ -1,39 +1,62 @@
-<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+<div class="container">
+    <div class="container position-relative">
+        <div class="formulario">
+            <h4>Generar Horario</h4>
+            <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
 
-    <mat-form-field appearance="outline">
-        <mat-label>Hora</mat-label>
-        <mat-select formControlName="inicio">
-            <mat-option value="09:00:00">9:00h</mat-option>
-            <mat-option value="10:00:00">10:00h</mat-option>
-            <mat-option value="11:30:00">11:30h</mat-option>
-            <mat-option value="12:30:00">12:30h</mat-option>
-            <mat-option value="15:30:00">15:30h</mat-option>
-            <mat-option value="16:30:00">16:30h</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Dia</mat-label>
-        <mat-select formControlName="dia">
-            <mat-option [value]="martes">Lunes</mat-option>
-            <mat-option value="m">Martes</mat-option>
-            <mat-option value="x">Miércoles</mat-option>
-            <mat-option value="j">Jueves</mat-option>
-            <mat-option value="v">Viernes</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Asignatura</mat-label>
-        <mat-select formControlName="asignaturas_id">
-            <mat-option *ngFor="let asignatura of asignaturas"
-                [value]="asignatura.id">{{asignatura.asignatura}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Clase</mat-label>
-        <mat-select formControlName="clases_id">
-            <mat-option *ngFor="let clase of clases" [value]="clase.clase_id">{{clase.nombre}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <input type="submit" value="Registrar">
+                <div class="mb-3">
+                    <label class="form-label">Hora</label>
+                    <select class="form-select" formControlName="inicio">
+                        <option value="">Selecciona una Hora</option>
+                        <option value="09:00">9:00h</option>
+                        <option value="10:00">10:00h</option>
+                        <option value="11:30:00">11:30h</option>
+                        <option value="12:30:00">12:30h</option>
+                        <option value="15:30:00">15:30h</option>
+                        <option value="16:30:00">16:30h</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Dia</label>
+                    <select class="form-select" formControlName="dia">
+                        <option value="">Selecciona un Día</option>
+                        <option value="l">Lunes</option>
+                        <option value="m">Martes</option>
+                        <option value="x">Miércoles</option>
+                        <option value="j">Jueves</option>
+                        <option value="v">Viernes</option>
+                    </select>
 
-</form>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Asignatura</label>
+                    <select class="form-select" formControlName="asignaturas_id">
+                        <option value="">Selecciona una Asignatura</option>
+                        <option selected *ngFor="let asignatura of asignaturas" [value]="asignatura.id">
+                            {{asignatura.asignatura}}
+                        </option>
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Clase</label>
+                    <select class="form-select" formControlName="clases_id">
+                        <option value="">Selecciona una Clase</option>
+                        <option selected *ngFor="let clase of clases" [value]="clase.clase_id">{{clase.nombre}}</option>
+                    </select>
+
+                </div>
+
+                <div class="boton">
+                    <input type="submit" class="btn" value="Registrar" [disabled]="!formulario.valid">
+                </div>
+            </form>
+        </div>
+        <div class="nube">
+            <img src="../../../../assets/images/nube.png" class="img-fluid">
+        </div>
+    </div>
+
+</div>

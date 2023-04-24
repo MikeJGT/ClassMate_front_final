@@ -30,7 +30,8 @@
                 *ngIf="!userService.isLogged() && router.url === '/'">Login</button>
 
             <button class="btn" [routerLink]="['/registro']"
-                *ngIf="userService.isLogged() && userService.isProfesor()">Crear Usuario</button>
+                *ngIf="userService.isLogged() && userService.isProfesor() && router.url!=='/registro'">Crear
+                Usuario</button>
 
             <button class="btn" (click)="onLogOut()" *ngIf="userService.isLogged()">LogOut</button>
         </div>

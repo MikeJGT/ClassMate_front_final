@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AsignaturaService } from 'src/app/services/asignatura.service';
 import { ClaseService } from 'src/app/services/clase.service';
 
@@ -10,17 +10,27 @@ import { ClaseService } from 'src/app/services/clase.service';
 })
 export class FormularioComponent {
   formulario: FormGroup;
-  martes: String;
   asignaturas: any;
   clases: any;
   constructor(private asigSV: AsignaturaService, private classSV: ClaseService) {
-    this.martes = 'm',
-      this.formulario = new FormGroup({
-        inicio: new FormControl(),
-        dia: new FormControl(),
-        asignaturas_id: new FormControl(),
-        clases_id: new FormControl()
-      }),
+    this.formulario = new FormGroup({
+      inicio: new FormControl('', [
+        Validators.required,
+        Validators.minLength(1)
+      ]),
+      dia: new FormControl('', [
+        Validators.required,
+        Validators.minLength(1)
+      ]),
+      asignaturas_id: new FormControl('', [
+        Validators.required,
+        Validators.minLength(1)
+      ]),
+      clases_id: new FormControl('', [
+        Validators.required,
+        Validators.minLength(1)
+      ])
+    }),
       this.asignaturas = [],
       this.clases = []
   }
@@ -37,5 +47,7 @@ export class FormularioComponent {
   async onSubmit() {
     const result = await this.asigSV.setHorario(this.formulario.value);
     console.log(result);
+    alert('Asignatura Registrada')
+    this.formulario.reset();
   }
 }
