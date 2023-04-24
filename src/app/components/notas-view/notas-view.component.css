@@ -1,0 +1,28 @@
+table {
+    border: none;
+}
+
+.tabla {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+
+table th {
+    background-color: #246355;
+    border-bottom: 4px solid black;
+    color: white;
+}
+
+table tr:nth-child(even) td {
+    background-color: #ddd;
+}
+
+table tr:nth-child(even) td:hover {
+    background-color: #c1d23e;
+}
+
+tr:hover td {
+    background-color: #c1d23e;
+    color: white;
+}

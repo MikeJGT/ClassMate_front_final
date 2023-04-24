@@ -38,12 +38,12 @@
 
 .alumno {
     border: 1px solid black;
-    padding: 1.2em;
+    padding: 1.5em;
     background-image: url(../../../assets/images/cuadro3.png);
-    background-position: cover;
     background-blend-mode: multiply;
     background-color: #ffffff;
-
+    background-size: cover;
+    background-position: center center;
     border-radius: 25px;
     margin-bottom: 1em;
 }
@@ -53,14 +53,24 @@
     grid-column: 3/4;
     grid-row: 3 / 4;
     border: 1px solid black;
+    background-color: #dfeaf1;
 
+}
+
+.observaciones h2 {
+    margin: 1em;
 }
 
 .observacion {
     border-radius: 25px;
-    background-color: #dfeaf1;
-    background-position: center;
+    background-image: url(../../../assets/images/cuadricula2.jpg);
+    background-blend-mode: multiply;
+    background-position: center center;
+    background-size: cover;
+    background-color: white;
     border: 1px solid black;
     padding: 16px;
+    margin-bottom: 1em;
+
 
 }
