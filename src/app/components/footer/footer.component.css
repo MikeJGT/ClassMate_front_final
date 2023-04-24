@@ -29,6 +29,10 @@ img {
     width: 180px;
 }
 
+footer {
+    margin-top: 50px;
+}
+
 footer ul {
     width: 200px;
     font-size: 16px;
