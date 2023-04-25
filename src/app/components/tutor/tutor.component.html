@@ -24,7 +24,7 @@
                             <h3>{{alumno.nombre}} {{alumno.apellidos}}</h3>
                             <p>Email: {{alumno.email}}</p>
                             <p>Direccion: {{alumno.direccion}}</p>
-                            <p>Nacimiento: {{alumno.nacimiento}}</p>
+                            <p>Nacimiento: {{alumno.nacimiento | date:'medium'}} </p>
                             <p>Clase: {{alumno.clase}}</p>
                         </div>
                     </div>
