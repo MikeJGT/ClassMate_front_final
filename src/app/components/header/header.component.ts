@@ -21,26 +21,22 @@ export class HeaderComponent {
   }
 
   async ngOnInit() {
-    this.male = await this.isMale()
+    this.name = localStorage.getItem('generoUser');
+    this.male = (localStorage.getItem('nombreUser') === 'm') ? true : false;
     const obj = this.utilService.getToken()
     const [user] = await this.userService.getUserById(obj.user_id)
     this.name = user.nombre;
   }
+
+  ngDoCheck() {
+    this.name = localStorage.getItem('nombreUser');
+    this.male = (localStorage.getItem('generoUser') === 'm') ? true : false;
+  }
+
   onLogOut() {
     // Borro el token
     localStorage.removeItem('token');
     this.router.navigate(['/login'])
   }
 
-
-  async isMale() {
-    const obj = this.utilService.getToken()
-    const [genero] = await this.userService.getGenre(obj.user_id);
-    console.log('GENERO', genero);
-    console.log('OBJJ', obj);
-    if (genero.genero === 'm') {
-      return true
-    }
-    return false
-  }
 }
