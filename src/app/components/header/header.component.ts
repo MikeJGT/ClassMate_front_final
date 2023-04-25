@@ -26,6 +26,9 @@ export class HeaderComponent {
     const [user] = await this.userService.getUserById(obj.user_id)
     this.name = user.nombre;
   }
+
+
+
   onLogOut() {
     // Borro el token
     localStorage.removeItem('token');
