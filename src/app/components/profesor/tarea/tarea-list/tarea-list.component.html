@@ -5,7 +5,7 @@
             <div class="tarea1">
                 <h3>{{tarea.titulo}}</h3>
                 <p>{{tarea.contenido}}</p>
-                <p>Fecha Entrega: {{tarea.fecha_entrega}}</p>
+                <p>Fecha Entrega: {{tarea.fecha_entrega | date:'medium'}}</p>
                 <div class="boton">
                     <button class="btn btn-info" [routerLink]="['/profesor/tarea','edit', tarea.id]"
                         *ngIf="!alumnoService.isAlumno()">Editar</button>
@@ -15,7 +15,5 @@
             </div>
         </div>
     </div>
-    <div class="aro" *ngIf="!alumnoService.isAlumno()">
-        <img src="../../../../assets/images/aro.png" class="img-fluid">
-    </div>
+
 </div>

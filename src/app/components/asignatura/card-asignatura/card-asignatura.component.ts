@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AlumnoService } from 'src/app/services/alumno.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-card-asignatura',
@@ -10,7 +12,8 @@ export class CardAsignaturaComponent {
   asignatura: string
   datosFormulario: any[]
   idAsignatura: number = 0;
-  constructor(private actRoute: ActivatedRoute) {
+  constructor(private actRoute: ActivatedRoute,
+    public alumnoService: UserService) {
     this.asignatura = ''
     this.datosFormulario = []
   }
