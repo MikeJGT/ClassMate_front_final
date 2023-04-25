@@ -18,8 +18,7 @@ export class EditTareaComponent {
       {
         titulo: new FormControl(),
         contenido: new FormControl(),
-        fecha_entrega: new FormControl(),
-        creacion_fecha: new FormControl()
+        fecha_entrega: new FormControl()
       }
     )
   }

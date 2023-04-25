@@ -29,13 +29,13 @@ export class TareaListComponent {
       const id = params['id'];
 
       //Decodifica user_id y role del token
-      this.listarTareaByRol(id)
+      await this.listarTareaByRol(id)
     })
 
   };
 
   async ngOnChanges(): Promise<void> {
-    this.listarTareaByRol(this.asignaturaId.id)
+    await this.listarTareaByRol(this.asignaturaId.id)
   };
 
   //Funcion borrar tarea
