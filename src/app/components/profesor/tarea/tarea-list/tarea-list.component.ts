@@ -41,7 +41,7 @@ export class TareaListComponent {
   //Funcion borrar tarea
   async deleteTask(idTask: number) {
     await this.profesorService.deleteTask(idTask);
-    this.listarTareaByRol(this.asignaturaId.id)
+    await this.listarTareaByRol(this.asignaturaId.id)
 
   }
 
