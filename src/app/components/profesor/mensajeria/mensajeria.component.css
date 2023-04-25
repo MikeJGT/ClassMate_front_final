@@ -23,13 +23,15 @@ form textarea {
 button {
     background-color: white;
     border: none;
+
 }
 
 button i {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #c1d23e;
 
 }
+
 
 .mensajes div {
     box-shadow: #c1d23e 0px 4px 10px;
@@ -37,9 +39,10 @@ button i {
     margin: 1em;
     padding: 1em;
     font-size: 1.5em;
+    position: relative;
 }
 
-.mensajes div p:last-child {
+.mensajes div p:nth-child(3) {
     color: rgb(155, 146, 146);
     text-align: right;
 }
@@ -56,4 +59,14 @@ button i {
 
 .mensajes div:first-child {
     margin-top: 40px;
+}
+
+
+
+.mensajes i {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    cursor: pointer;
 }

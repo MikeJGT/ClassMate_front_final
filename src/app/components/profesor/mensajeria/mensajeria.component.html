@@ -16,6 +16,8 @@
             <p class="nombre">{{mensaje.receptor}}</p>
             <p>{{mensaje.contenido}}</p>
             <p>{{mensaje.fecha | date:'medium'}}</p>
+            <i class="fa-solid fa-circle-minus" (click)="deleteMessage(mensaje.id)"></i>
+
         </div>
     </div>
 
