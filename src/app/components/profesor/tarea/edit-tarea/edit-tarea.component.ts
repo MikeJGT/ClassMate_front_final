@@ -18,7 +18,8 @@ export class EditTareaComponent {
       {
         titulo: new FormControl(),
         contenido: new FormControl(),
-        fecha_entrega: new FormControl()
+        fecha_entrega: new FormControl(),
+        creacion_fecha: new FormControl()
       }
     )
   }
@@ -29,8 +30,8 @@ export class EditTareaComponent {
         let id = data['tareaid'];
 
         const [res] = await this.profesorService.getTareaProfesorById(id)
-        console.log(res)
-        console.log(res.id);
+        // console.log('MI RESSSSSSSSSSSSSSSSSSsss', res)
+        // console.log(res.id);
         delete res.Profesor;
 
         delete res.id
@@ -46,7 +47,7 @@ export class EditTareaComponent {
     )
   }
   onSubmit() {
-    console.log(this.formulario.value)
+    // console.log(this.formulario.value)
     this.activatedRoute.params.subscribe(async data => {
       let id = data['tareaid'];
       const response = await this.profesorService.updateTask(id, this.formulario.value);
