@@ -19,6 +19,8 @@ export class PerfilComponent {
     const token = await this.utilsService.getToken();
     const userId = token.user_id;
     this.arrPerfil = await this.userService.getUserById(userId);
-    console.log(this.arrPerfil);
+    console.log('DESDE PERFIL ', this.arrPerfil);
+    localStorage.setItem('nombreUser', this.arrPerfil[0].nombre)
+    localStorage.setItem('generoUser', this.arrPerfil[0].genero)
   }
 }
