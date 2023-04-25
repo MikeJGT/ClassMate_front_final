@@ -52,13 +52,13 @@ export class MensajeriaComponent {
       switch (token.role) {
         case 'profesor': {
           this.arrUsers = await this.tutorService.getAllTutor()
-          console.log('tutorrrr', this.arrUsers);
+          //console.log('tutorrrr', this.arrUsers);
           break;
 
         }
         case 'tutor': {
           this.arrUsers = await this.profesorService.getAllProfesor();
-          console.log('PROFEEEE', this.arrUsers);
+          //console.log('PROFEEEE', this.arrUsers);
           break;
         }
         default: {
@@ -66,12 +66,13 @@ export class MensajeriaComponent {
           break;
         }
       }
-
+      //Lista Mensajeria
       const response = await this.mensajeriaSV.getMensajesByConversacionId(this.conversacionId);
       if (!response.fatal) {
         this.arrMensajes = response
       }
-      // console.log('Mensajesssssss', this.arrMensajes);
+
+      console.log('Mensajesssssss', this.arrMensajes);
 
     } catch (err) {
       //  console.log('ERROR->ERRRRRRRRRRRRRRRRRRRRRR');
@@ -90,6 +91,27 @@ export class MensajeriaComponent {
     }
     console.log('MENSAJE BODYYYYY', bodyMensaje);
     const res = await this.mensajeriaSV.insertMensaje(bodyMensaje);
-    console.log('Mensajeriaasss guardasss', res)
+    this.formMensaje.reset();
+    if (res.affectedRows) {
+      const response = await this.mensajeriaSV.getMensajesByConversacionId(this.conversacionId);
+      if (!response.fatal) {
+        this.arrMensajes = response
+      }
+
+    }
+  }
+
+  async deleteMessage(idMensaje: number) {
+    console.log(idMensaje);
+    const resDelete = await this.mensajeriaSV.deleteMensajeById(idMensaje)
+    console.log('dsdsds', resDelete)
+    if (resDelete.affectedRows) {
+      const response = await this.mensajeriaSV.getMensajesByConversacionId(this.conversacionId);
+      if (!response.fatal) {
+        this.arrMensajes = response;
+      } else {
+        this.arrMensajes = [];
+      }
+    }
   }
 }

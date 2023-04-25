@@ -32,4 +32,10 @@ export class MensajeriaService {
       this.httpClient.post<any>(`${this.baseUrl}/mensaje`, mensajeValues)
     )
   }
+
+  deleteMensajeById(idMensaje: number) {
+    return firstValueFrom(
+      this.httpClient.delete<any>(`${this.baseUrl}/mensaje/${idMensaje}`)
+    )
+  }
 }

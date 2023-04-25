@@ -21,22 +21,33 @@ form textarea {
 button {
     background-color: white;
     border: none;
+
 }
 
 button i {
-    font-size: 2.5em;
+    font-size: 2em;
     color: #c1d23e;
 
 }
+
 
 .mensajes div {
     box-shadow: #c1d23e 0px 4px 10px;
     background-color: #dfeaf1;
     margin: 1em;
     padding: 1em;
+    position: relative;
 }
 
 .mensajes div p:last-child {
     color: rgb(155, 146, 146);
     text-align: right;
+}
+
+.mensajes i {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: red;
+    cursor: pointer;
 }
