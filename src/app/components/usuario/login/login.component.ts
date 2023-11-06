@@ -31,16 +31,13 @@ export class LoginComponent {
 
   async onSubmit() {
     try {
-      console.log(this.formulario.value)
       const response = await this.userService.getUserByLogin(this.formulario.value);
 
       if (response.fatal) {
         return alert(response.fatal);
       }
       localStorage.setItem('token', response.token);
-      console.log('Sale el token ?', response);
     } catch (error) {
-      console.log(error)
     }
     const token = this.utilService.getToken()
     if (token.role === 'profesor') {
