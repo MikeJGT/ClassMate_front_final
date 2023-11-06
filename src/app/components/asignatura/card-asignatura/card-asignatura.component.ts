@@ -20,20 +20,15 @@ export class CardAsignaturaComponent {
 
   ngOnInit() {
     this.actRoute.params.subscribe(async params => {
-      console.log(params)
+
       const id = params['id'];
       this.asignatura = params['nombre'];
-      console.log('ASIGNATURA EMITIDA', this.asignatura);
       localStorage.setItem('asignaturaId', id);
-      //lista de tareas para una asignatura
-      //reutilizamos tarea-list-component   
-
     })
 
   }
 
   getNombre($event: any) {
-    console.log('EVENTO', $event);
     this.idAsignatura = $event;
   }
 }
