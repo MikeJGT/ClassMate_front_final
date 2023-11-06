@@ -29,30 +29,20 @@ export class EditTareaComponent {
         let id = data['tareaid'];
 
         const [res] = await this.profesorService.getTareaProfesorById(id)
-        // console.log('MI RESSSSSSSSSSSSSSSSSSsss', res)
-        // console.log(res.id);
         delete res.Profesor;
-
         delete res.id
         delete res.clase;
         delete res.clases_id;
         delete res.asignatura;
         delete res.asignaturas_id;
-
         this.formulario.setValue(res)
-
-
       }
     )
   }
   onSubmit() {
-    // console.log(this.formulario.value)
     this.activatedRoute.params.subscribe(async data => {
       let id = data['tareaid'];
       const response = await this.profesorService.updateTask(id, this.formulario.value);
-      console.log(response);
     })
   }
-
-
 }
