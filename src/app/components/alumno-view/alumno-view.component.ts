@@ -23,17 +23,11 @@ export class AlumnoViewComponent {
   async ngOnInit() {
     this.arrAlumnos = await this.alumSV.getAlumnosWithClassID();
     this.alumnoIdd = this.token.user_id;
-    console.log('TOKEN TOKEN', this.token.user_id);
-    console.log('ArrayAlumnos', this.arrAlumnos);
-
     for (let alumno of this.arrAlumnos) {
       if (alumno.id === this.token.user_id) {
         this.classIDd = alumno.clases_id
       }
     }
-
-    console.log('CLASEEEEEEEEEEEEEEEE ID', this.classIDd)
-    console.log('AlumnoOOOOOOOOOOO ID', this.alumnoIdd)
   }
 
 }
