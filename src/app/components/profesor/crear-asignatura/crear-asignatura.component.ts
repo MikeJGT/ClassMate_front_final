@@ -28,12 +28,8 @@ export class CrearAsignaturaComponent {
   }
 
   async onSubmit() {
-    console.log(this.formularioAsignatura.value);
     const token = this.utilsService.getToken()
-    console.log(token);
     this.arrAsignaturas = await this.profesorService.crearAsignatura(token.user_id, this.formularioAsignatura.value)
-    console.log(this.arrAsignaturas);
-
   }
 }
 
