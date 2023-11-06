@@ -25,10 +25,7 @@ export class TareaListComponent {
   }
   ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      //console.log(params['id'])
       const id = params['id'];
-
-      //Decodifica user_id y role del token
       await this.listarTareaByRol(id)
     })
 
@@ -49,27 +46,18 @@ export class TareaListComponent {
 
   async listarTareaByRol(pId: any) {
     const obj = this.utisService.getToken();
-    console.log(obj)
-    console.log(obj.role);
-    console.log('holaaaaaa', this.asignaturaId);
-
     switch (obj.role) {
       case 'profesor': {
-        //get tarea por asignatura ID
         this.tareas = await this.tareaService.getTareaByAsignaturaId(pId);
-        //console.log(this.tareas)
         break;
       }
       case 'alumno': {
-        //este vale
-        //Guardo claseID por la siguiente peticion
         const [{ clases_id }] = await this.profesorService.getClassByAlumnoID(obj.user_id);
         this.tareas = await this.profesorService.getTareabyClassId(clases_id);
         break;
       }
 
       case 'tutor': {
-        console.log('GESTIONARR TAREA DE HIJOS');
         break;
       }
       default: {
