@@ -38,15 +38,9 @@ export class FormularioComponent {
   async ngOnInit() {
     this.asignaturas = await this.asigSV.getAllAsignaturas();
     this.clases = await this.classSV.getAllClases();
-    console.log('asignaturas', this.asignaturas);
-    console.log('clases', this.clases);
   }
-
-  //getClase {clase_nombre:'1A',clase_id:2}
-  //getAsignatura {asignatura:'Mates',asignatura_id:2}
   async onSubmit() {
     const result = await this.asigSV.setHorario(this.formulario.value);
-    console.log(result);
     alert('Asignatura Registrada')
     this.formulario.reset();
   }
