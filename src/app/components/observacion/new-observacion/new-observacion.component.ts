@@ -28,21 +28,17 @@ export class NewObservacionComponent {
   }
   ngOnInit() {
     this.activatedRoute.params.subscribe(async (data: any) => {
-      //console.log(data.claseid);
       this.alumnoID = data.id;
       this.claseID = data.claseid;
     })
   }
   async onSubmit() {
-    console.log(this.formObservacion.value.titulo)
-    console.log(this.formObservacion.value.contenido)
     const bodyObservacion = {
       titulo: this.formObservacion.value.titulo,
       contenido: this.formObservacion.value.contenido,
       alumno_id: this.alumnoID
     }
     const res = await this.profesorService.crearObservacion(bodyObservacion)
-    console.log(res);
     this.router.navigate([`/profesor/clase/${this.claseID}`])
 
   }
