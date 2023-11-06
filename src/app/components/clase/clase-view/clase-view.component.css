@@ -9,7 +9,6 @@
     display: flex;
     flex-wrap: wrap;
     padding-left: 20px;
-    /* padding-left: 20px; */
 }
 
 .botonSelect {
@@ -17,8 +16,6 @@
     flex-wrap: wrap;
     padding-bottom: 30px;
     padding-top: 30px;
-
-    /* padding-left: 20px; */
 }
 
 .listaAlumnos {
