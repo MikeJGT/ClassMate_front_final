@@ -5,13 +5,10 @@ import jwtDecode from 'jwt-decode';
   providedIn: 'root'
 })
 export class UtilsService {
-
   constructor() { }
 
   getToken() {
     const obj = jwtDecode<any>(localStorage.getItem('token')!);
-    //console.log('token decodificado', obj);
     return obj;
   }
-
 }
