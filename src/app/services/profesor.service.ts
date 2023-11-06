@@ -8,10 +8,8 @@ import { firstValueFrom } from 'rxjs';
 export class ProfesorService {
   baseUrl: string = 'http://localhost:3000'
   constructor(private httpClient: HttpClient) { }
-  //Sacar todos los usuarios que es alumno
   getUsers() {
     return firstValueFrom(
-      //pasar el authorization
       this.httpClient.get<any>(`${this.baseUrl}/api/profesor/alumno`)
     );
   }
@@ -21,7 +19,6 @@ export class ProfesorService {
       this.httpClient.get<any>(`${this.baseUrl}/api/horario/profesor/${profesorId}`)
     )
   }
-  //Sacar datos de tarea por clasesid  --En proceso
   getTareabyClassId(classId: any) {
     return firstValueFrom(
       this.httpClient.get<any>(`${this.baseUrl}/api/tarea/clase/${classId}`)
