@@ -43,22 +43,17 @@ export class MensajeriaComponent {
 
     try {
       this.activateRoute.params.subscribe(data => {
-        //console.log(data['conversacionID'])
         this.conversacionId = data['conversacionID'];
-        console.log('id', this.conversacionId);
       })
       const token = this.utilsService.getToken();
-      //Si soy profesor muestro receptor tutor , si soy tutor muestor receptor de profesor
       switch (token.role) {
         case 'profesor': {
           this.arrUsers = await this.tutorService.getAllTutor()
-          //console.log('tutorrrr', this.arrUsers);
           break;
 
         }
         case 'tutor': {
           this.arrUsers = await this.profesorService.getAllProfesor();
-          //console.log('PROFEEEE', this.arrUsers);
           break;
         }
         default: {
@@ -71,25 +66,19 @@ export class MensajeriaComponent {
       if (!response.fatal) {
         this.arrMensajes = response
       }
-
-      console.log('Mensajesssssss', this.arrMensajes);
-
     } catch (err) {
-      //  console.log('ERROR->ERRRRRRRRRRRRRRRRRRRRRR');
+       console.log('Error', err);
     }
   }
 
   async getDataMensaje() {
     const obj = this.utilsService.getToken();
-    // console.log(obj.user_id)
-    console.log(this.formMensaje.value)
     const bodyMensaje = {
       contenido: this.formMensaje.value.contenido,
       emisor_id: obj.user_id,
       receptor_id: this.formMensaje.value.receptor_id,
       conversaciones_id: this.conversacionId
     }
-    console.log('MENSAJE BODYYYYY', bodyMensaje);
     const res = await this.mensajeriaSV.insertMensaje(bodyMensaje);
     this.formMensaje.reset();
     if (res.affectedRows) {
@@ -102,9 +91,7 @@ export class MensajeriaComponent {
   }
 
   async deleteMessage(idMensaje: number) {
-    console.log(idMensaje);
     const resDelete = await this.mensajeriaSV.deleteMensajeById(idMensaje)
-    console.log('dsdsds', resDelete)
     if (resDelete.affectedRows) {
       const response = await this.mensajeriaSV.getMensajesByConversacionId(this.conversacionId);
       if (!response.fatal) {
