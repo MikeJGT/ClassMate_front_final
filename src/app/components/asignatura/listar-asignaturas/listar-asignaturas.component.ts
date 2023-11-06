@@ -17,12 +17,8 @@ export class ListarAsignaturasComponent {
 
   async ngOnInit() {
     this.actRoute.params.subscribe(async params => {
-      console.log(params)
       const id = params['id'];
-      //Recupera el alumno a partir de su id;
       this.arrAsig = await this.asigSV.getAsignaturasByClaseId(id);
-      console.log(this.arrAsig);
-
     })
   }
 }
