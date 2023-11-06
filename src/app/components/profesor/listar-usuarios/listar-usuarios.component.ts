@@ -17,7 +17,6 @@ export class ListarUsuariosComponent {
   }
   async ngOnInit() {
     this.arrUsers = await this.profeSV.getUsers();
-    console.log(this.arrUsers);
   }
 
 }
