@@ -24,9 +24,7 @@ export class NewConversacionComponent {
     )
   }
   async onSubmit() {
-    console.log(this.formConversacion.value)
     const obj = this.utilsService.getToken();
-    console.log('TOOKKKEEENNN', obj)
     await this.mensajeriaService.insertConversacion(this.formConversacion.value)
     switch (obj.role) {
       case 'profesor': {
