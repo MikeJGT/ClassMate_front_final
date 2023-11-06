@@ -24,8 +24,6 @@ export class NotasViewComponent {
     this.notas = [];
     this.displayedColumns = ['asignatura', 'nota'];
     this.objToGetNotas = {
-      // alumno_id: '',
-      // clases_id: ''
     };
   }
 
@@ -33,13 +31,9 @@ export class NotasViewComponent {
 
     this.objToGetNotas.alumno_id = this.alumnoId;
     this.objToGetNotas.clases_id = this.claseID;
-    console.log('CLASE ID', this.claseID);
 
     this.asignaturas = await this.asigSV.getAsignaturasByClaseId(this.claseID);
-    console.log('Asignaturas', this.asignaturas);
-    //console.log(this.perfil)
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
-    console.log('Notas', this.notas);
 
     this.insertOnInit();
   }
@@ -47,8 +41,6 @@ export class NotasViewComponent {
 
   async insertOnInit() {
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
-    console.log('PUTO OBJETO', this.objToGetNotas)
-    console.log('NOTAS', this.notas)
     const body = {
       alumno_id: this.objToGetNotas.alumno_id,
       asignaturas_id: 0
@@ -59,22 +51,15 @@ export class NotasViewComponent {
         await this.notasSV.insertNotasOnInit(body)
       }
     }
-    //Al insertar datos en el back hay que volver a recogerlos
-    //o no muestra los insertNotasOnInit 
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
-    console.log('NOTAS 2', this.notas)
   }
 
   async ngOnChanges() {
 
     this.objToGetNotas.alumno_id = this.alumnoId;
     this.objToGetNotas.clases_id = this.claseID;
-    console.log('CLASE ID', this.claseID);
 
     this.asignaturas = await this.asigSV.getAsignaturasByClaseId(this.claseID);
-    console.log('Asignaturas', this.asignaturas);
-    //console.log(this.perfil)
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
-    console.log('Notas', this.notas);
   }
 }
