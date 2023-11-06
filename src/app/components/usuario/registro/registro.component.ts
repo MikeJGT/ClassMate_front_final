@@ -47,15 +47,12 @@ export class RegistroComponent {
   }
 
   async onSubmit() {
-    console.log('Formulario', this.formularioRegister.value)
     const response = await this.userSV.createUser(this.formularioRegister.value);
-    console.log(response);
     this.formularioRegister.reset();
   }
   cambiarTipoPassword() {
     this.tipoPassword = this.tipoPassword === 'text' ? 'password' : 'text';
   }
-  //Chequea el error
   checkError(control: string, validator: string) {
     return this.formularioRegister.get(control)?.hasError(validator) && this.formularioRegister.get(control)?.touched;
   }
