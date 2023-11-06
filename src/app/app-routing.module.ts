@@ -64,12 +64,9 @@ const routes: Routes = [
   }, {
     path: 'alumno/notas', component: AlumnoViewComponent
   },
-
-
   // Rutas Horario
   { path: 'horario', component: TablaComponent },
   { path: 'horario/registro', component: FormularioComponent },
-  //La ruta clase es prescindible, está para comprobar el componente
   { path: 'clase', component: ListarClasesComponent },
   // Rutas del tutor
   {
@@ -83,10 +80,6 @@ const routes: Routes = [
   { path: 'tutor/alumno/clase/:alumnoId/:id', component: TareaComponent },
   //Perfil
   { path: 'perfil', component: PerfilComponent },
-
-  //Asinaturas
-
-
   { path: '**', redirectTo: '' }
 
 ];
