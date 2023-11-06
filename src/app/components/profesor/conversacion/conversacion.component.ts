@@ -16,11 +16,9 @@ export class ConversacionComponent {
 
   async ngOnInit() {
     const response = await this.mensajeriaService.getConversaciones()
-    console.log(response);
 
     if (!response.fatal) {
       this.arrConversaciones = response;
     }
-    //console.log(this.arrConversaciones);
   }
 }
