@@ -43,28 +43,21 @@ export class CardAlumnoComponent {
   }
   async ngOnInit() {
     this.activatedRoute.params.subscribe(async params => {
-      //console.log(params)
       this.id = params['id'];
       this.claseId = params['claseId'];
-      console.log('CLASE ID', this.claseId);
       this.objToGetNotas.alumno_id = this.id;
       this.objToGetNotas.clases_id = this.claseId;
 
       this.asignaturas = await this.asigSV.getAsignaturasByClaseId(this.claseId);
-      console.log('Asignaturas', this.asignaturas);
 
       //Recupera el alumnos a partir de su id;
       [this.perfil] = await this.alumnoSV.getAlumnoById(this.id);
-      //console.log(this.perfil)
-
       this.insertOnInit();
     })
   }
 
   async insertOnInit() {
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
-    console.log('PUTO OBJETO', this.objToGetNotas)
-    console.log('NOTAS', this.notas)
     const body = {
       alumno_id: this.objToGetNotas.alumno_id,
       asignaturas_id: 0
@@ -75,16 +68,11 @@ export class CardAlumnoComponent {
         await this.notasSV.insertNotasOnInit(body)
       }
     }
-    //Al insertar datos en el back hay que volver a recogerlos
-    //o no muestra los insertNotasOnInit 
     this.notas = await this.notasSV.getAllNotasByAlumnoId(this.objToGetNotas);
-    console.log('NOTAS 2', this.notas)
   }
 
   async onSubmit() {
     await this.notasSV.updateNota(this.formularioNota.value);
-    //recargo el componente con cada submit
     this.ngOnInit();
-    //console.log('Formulario NOTA', this.formularioNota.value);
   }
 }
