@@ -25,14 +25,8 @@ export class TutorComponent {
 
   async ngOnInit() {
     const obj = this.utilsService.getToken();
-    //console.log('Hoollaa', obj.user_id);
     const idTutor = obj.user_id
     this.arrAlumnos = await this.tutorService.getAlumnoByTutorId(idTutor);
-    // console.log('Ejermmmm', this.arrAlumnos);
     this.arrObservacion = await this.tutorService.getObservationBytutorID(idTutor);
-    console.log(this.arrObservacion);
-
   }
-
-
 }
