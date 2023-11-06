@@ -14,6 +14,5 @@ export class ListarClasesComponent {
 
   async ngOnInit() {
     this.arrClases = await this.claseSV.getAllClases();
-    console.log(this.arrClases);
   }
 }
